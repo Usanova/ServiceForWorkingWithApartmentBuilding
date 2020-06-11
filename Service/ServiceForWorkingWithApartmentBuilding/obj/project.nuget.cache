@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HP53gbJCxkhzbfYw65M4OVBTVlcweY19TsPc15kB8lLYfW5PWVg8/k6YKm/E2ZqyW/sdHpl7d6bKW7Om/YTmqA==",
+  "dgSpecHash": "vvh+8qbv7u5n+scWlzCKM1uAsu0NpQNEHIuD1OaWAbwLiszD3XTKNqea1ms9qBiMI3MOl5WRr0dxS3lWULSCcw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usano\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\usano\\.nuget\\packages\\microsoft.aspnet.webapi.client\\4.0.20505\\microsoft.aspnet.webapi.client.4.0.20505.nupkg.sha512",

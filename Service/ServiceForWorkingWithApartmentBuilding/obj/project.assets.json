@@ -8742,11 +8742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
       "projectName": "ServiceForWorkingWithApartmentBuilding",
-      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
       "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\obj\\",
+      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\ServiceForWorkingWithApartmentBuilding\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8765,11 +8765,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj"
+            "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

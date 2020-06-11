@@ -21,10 +21,10 @@ namespace Infrastructure.Tenats
                 .SingleOrDefaultAsync(t => t.TenatId == tenetId);
         }
 
-        public async Task<Tenant> Get(string name, string surname, CancellationToken cancellationToken)
+        public async Task<Tenant> Get(string name, string password, CancellationToken cancellationToken)
         {
             return await context.Tenants
-                 .FirstOrDefaultAsync(t => t.Name == name && t.Surname == surname);
+                 .FirstOrDefaultAsync(t => t.Name == name && t.Password == password);
         }
 
         public async Task<Tenant> Get(string name, string surname, string password, CancellationToken cancellationToken)

@@ -10,7 +10,7 @@ namespace Domain.Tenats
     {
         Task<Tenant> Get(Guid tenatId, CancellationToken cancellationToken);
 
-        Task<Tenant> Get(string name, string surname, CancellationToken cancellationToken);
+        Task<Tenant> Get(string name, string password, CancellationToken cancellationToken);
 
         Task<Tenant> Get(string name, string surname, string password, CancellationToken cancellationToken);
 

@@ -681,11 +681,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -704,8 +704,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj"
+            "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj"
             }
           }
         }

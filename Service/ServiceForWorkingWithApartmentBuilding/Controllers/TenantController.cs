@@ -26,7 +26,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
                 return BadRequest(new { errorText = "Invalid username or password." });
             }
 
-            return await GetToken(tenant.Name);
+            return await GetToken(tenant.TenatId);
         }
 
 
@@ -72,7 +72,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
             await repository.Save(tenant);
 
-            return await GetToken(tenant.Name);
+            return await GetToken(tenant.TenatId);
         }
 
         [HttpDelete("tenants/{tenantId}")]
@@ -90,11 +90,11 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             return NoContent();
         }
 
-        private async Task<IActionResult> GetToken(string userName)
+        private async Task<IActionResult> GetToken(Guid userId)
         {
             var claims = new List<Claim>
                 {
-                    new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, userId.ToString())
                 };
             var identity =
             new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,

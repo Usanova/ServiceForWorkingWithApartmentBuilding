@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Domain.Tenats;
+using Infrastructure.Announcements;
 using Infrastructure.Tenats;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OAuth;
@@ -44,7 +45,16 @@ namespace ServiceForWorkingWithApartmentBuilding
 
             #endregion
 
-            //services.AddSwagger();
+            #region Announcement
+
+            services.AddNpgsqlDbContext<AnnouncementDbContext>(connectionString);
+
+            services.AddScoped<Domain.Announcements.IAnnouncementRepository, Infrastructure.Announcements.AnnouncementRepository>();
+            services.AddScoped<Infrastructure.Announcements.Query.GetListAnnouncement>();    
+
+            #endregion
+
+            services.AddSwagger();
 
             //services.AddAuthentication()
             //    .AddCookie(options =>
@@ -101,11 +111,11 @@ namespace ServiceForWorkingWithApartmentBuilding
             app.UseAuthentication();    // аутентификация
             app.UseAuthorization();
 
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            //});
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {
