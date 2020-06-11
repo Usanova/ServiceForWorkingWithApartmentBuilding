@@ -1,0 +1,6 @@
+C:\Users\usano\source\repos\ServiceForWorkingWithApartmentBuilding\Infrastructure\bin\Debug\netstandard2.0\Infrastructure.deps.json
+C:\Users\usano\source\repos\ServiceForWorkingWithApartmentBuilding\Infrastructure\bin\Debug\netstandard2.0\Infrastructure.dll
+C:\Users\usano\source\repos\ServiceForWorkingWithApartmentBuilding\Infrastructure\obj\Debug\netstandard2.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\usano\source\repos\ServiceForWorkingWithApartmentBuilding\Infrastructure\obj\Debug\netstandard2.0\Infrastructure.AssemblyInfo.cs
+C:\Users\usano\source\repos\ServiceForWorkingWithApartmentBuilding\Infrastructure\obj\Debug\netstandard2.0\Infrastructure.csprojAssemblyReference.cache
+C:\Users\usano\source\repos\ServiceForWorkingWithApartmentBuilding\Infrastructure\obj\Debug\netstandard2.0\Infrastructure.csproj.CoreCompileInputs.cache
