@@ -40,17 +40,36 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
 
             modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.AnnouncementTenant", b =>
                 {
-                    b.Property<Guid>("TenatId")
+                    b.Property<Guid>("TenantId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("AnnouncementId")
                         .HasColumnType("uuid");
 
-                    b.HasKey("TenatId", "AnnouncementId");
+                    b.HasKey("TenantId", "AnnouncementId");
 
                     b.HasIndex("AnnouncementId");
 
                     b.ToTable("AnnouncementTenant");
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.AnswerOption", b =>
+                {
+                    b.Property<Guid>("PollId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("AnswerOptionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("VotersNumber")
+                        .HasColumnType("integer");
+
+                    b.HasKey("PollId");
+
+                    b.ToTable("AnswerOption");
                 });
 
             modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Building", b =>
@@ -94,9 +113,42 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.ToTable("ManagementCompany");
                 });
 
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Poll", b =>
+                {
+                    b.Property<Guid>("OwnerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("PollId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(64);
+
+                    b.HasKey("OwnerId");
+
+                    b.ToTable("Poll");
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.PollTenant", b =>
+                {
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("PollId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("TenantId", "PollId");
+
+                    b.HasIndex("PollId");
+
+                    b.ToTable("PollTenant");
+                });
+
             modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Tenant", b =>
                 {
-                    b.Property<Guid>("TenatId")
+                    b.Property<Guid>("TenantId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
@@ -127,7 +179,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                         .HasColumnType("character varying(32)")
                         .HasMaxLength(32);
 
-                    b.HasKey("TenatId");
+                    b.HasKey("TenantId");
 
                     b.ToTable("Tenant");
                 });
@@ -142,7 +194,17 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
 
                     b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Tenant", null)
                         .WithMany("AnnouncementTenant")
-                        .HasForeignKey("TenatId")
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.AnswerOption", b =>
+                {
+                    b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Poll", null)
+                        .WithMany("AnswerOption")
+                        .HasForeignKey("PollId")
+                        .HasPrincipalKey("PollId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -152,6 +214,22 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.ManagementCompany", null)
                         .WithMany("Buildings")
                         .HasForeignKey("ManagementCompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.PollTenant", b =>
+                {
+                    b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Poll", null)
+                        .WithMany("PollTenat")
+                        .HasForeignKey("PollId")
+                        .HasPrincipalKey("PollId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Tenant", null)
+                        .WithMany("PollTenant")
+                        .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

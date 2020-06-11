@@ -8,6 +8,6 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
     {
         public Guid AnnouncementId { get; private set; }
 
-        public Guid TenatId { get; private set; }
+        public Guid TenantId { get; private set; }
     }
 }
