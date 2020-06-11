@@ -24,5 +24,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
         public byte[] Avatar { get; private set; }
 
         public ICollection<AnnouncementTenant> AnnouncementTenant { get; private set; }
+
+        public Guid MeetingId { get; set; }
     }
 }

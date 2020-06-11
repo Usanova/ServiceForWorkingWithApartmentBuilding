@@ -65,6 +65,18 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.ToTable("AnnouncementTenant");
                 builder.HasKey(at => new { at.TenatId, at.AnnouncementId });
             });
+
+            modelBuilder.Entity<Meeting>(builder =>
+            {
+                builder.ToTable("Meeting");
+                builder.HasKey(m => m.MeetingId);
+                builder.Property(m => m.Name).HasMaxLength(64);
+                builder.Property(m => m.OwnerId);
+                builder.HasMany(m => m.Tenants)
+                    .WithOne()
+                    .HasForeignKey(t => t.MeetingId)
+                    .HasPrincipalKey(m => m.MeetingId);
+            });
         }
     }
 }

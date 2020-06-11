@@ -94,6 +94,24 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.ToTable("ManagementCompany");
                 });
 
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Meeting", b =>
+                {
+                    b.Property<Guid>("MeetingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(64);
+
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("MeetingId");
+
+                    b.ToTable("Meeting");
+                });
+
             modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Tenant", b =>
                 {
                     b.Property<Guid>("TenatId")
@@ -115,6 +133,9 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.Property<int>("FlatNumber")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("MeetingId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Name")
                         .HasColumnType("character varying(32)")
                         .HasMaxLength(32);
@@ -128,6 +149,8 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                         .HasMaxLength(32);
 
                     b.HasKey("TenatId");
+
+                    b.HasIndex("MeetingId");
 
                     b.ToTable("Tenant");
                 });
@@ -152,6 +175,15 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.ManagementCompany", null)
                         .WithMany("Buildings")
                         .HasForeignKey("ManagementCompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Tenant", b =>
+                {
+                    b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Meeting", null)
+                        .WithMany("Tenants")
+                        .HasForeignKey("MeetingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
