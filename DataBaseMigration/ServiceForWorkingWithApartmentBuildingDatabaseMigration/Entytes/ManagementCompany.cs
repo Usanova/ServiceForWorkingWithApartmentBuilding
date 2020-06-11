@@ -11,5 +11,9 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
         public string Name { get; private set; }
 
         public ICollection<Building> Buildings { get; private set; }
+
+        public string Info { get; private set; }
+
+        public byte[] Avatar {get; private set; }
     }
 }

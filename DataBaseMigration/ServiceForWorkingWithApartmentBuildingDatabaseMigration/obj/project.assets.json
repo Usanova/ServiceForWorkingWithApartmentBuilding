@@ -1322,11 +1322,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuindingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration.csproj",
+      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\DataBaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration.csproj",
       "projectName": "ServiceForWorkingWithApartmentBuildingDatabaseMigration",
-      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuindingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration.csproj",
+      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\DataBaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration.csproj",
       "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuindingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\obj\\",
+      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\DataBaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

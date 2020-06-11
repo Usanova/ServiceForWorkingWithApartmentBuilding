@@ -19,6 +19,40 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Announcement", b =>
+                {
+                    b.Property<Guid>("AnnouncementId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("character varying(1024)")
+                        .HasMaxLength(1024);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(64);
+
+                    b.HasKey("AnnouncementId");
+
+                    b.ToTable("Announcement");
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.AnnouncementTenant", b =>
+                {
+                    b.Property<Guid>("TenatId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("AnnouncementId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("TenatId", "AnnouncementId");
+
+                    b.HasIndex("AnnouncementId");
+
+                    b.ToTable("AnnouncementTenant");
+                });
+
             modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Building", b =>
                 {
                     b.Property<Guid>("BuildingId")
@@ -44,6 +78,12 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.Property<Guid>("ManagementCompanyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<byte[]>("Avatar")
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("Info")
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .HasColumnType("character varying(64)")
@@ -90,6 +130,21 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     b.HasKey("TenatId");
 
                     b.ToTable("Tenant");
+                });
+
+            modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.AnnouncementTenant", b =>
+                {
+                    b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Announcement", null)
+                        .WithMany("AnnouncementTenant")
+                        .HasForeignKey("AnnouncementId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Tenant", null)
+                        .WithMany("AnnouncementTenant")
+                        .HasForeignKey("TenatId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes.Building", b =>

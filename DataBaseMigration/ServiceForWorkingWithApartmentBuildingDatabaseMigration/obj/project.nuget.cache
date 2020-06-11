@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "51BboLPFQMTM+LdRSf3XsLZhtFWYhnppdBJPVd2ZWAxQTBovDxiycBo1ybjInOcpXoxCV0uzdiIDvQtJagCOvg==",
+  "dgSpecHash": "xyOw3LUYDx1g4EQB5akMNaP1QuO9E0yEWYb1q0HRWaItJJ/D7L/WaDQ0VO5uu3CJcqfLJSRPJM43uqXLGCb8EQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuindingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration.csproj",
+  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\DataBaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration\\ServiceForWorkingWithApartmentBuildingDatabaseMigration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usano\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\usano\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

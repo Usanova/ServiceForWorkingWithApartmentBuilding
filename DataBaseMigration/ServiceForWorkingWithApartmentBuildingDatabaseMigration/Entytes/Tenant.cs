@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
 {
@@ -22,6 +21,8 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
 
         public int FlatNumber { get; private set; }
 
-        public byte[] Avatar { get; set; }
+        public byte[] Avatar { get; private set; }
+
+        public ICollection<AnnouncementTenant> AnnouncementTenant { get; private set; }
     }
 }

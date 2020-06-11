@@ -8,11 +8,26 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Announcement",
+                columns: table => new
+                {
+                    AnnouncementId = table.Column<Guid>(nullable: false),
+                    Title = table.Column<string>(maxLength: 64, nullable: true),
+                    Content = table.Column<string>(maxLength: 1024, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Announcement", x => x.AnnouncementId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ManagementCompany",
                 columns: table => new
                 {
                     ManagementCompanyId = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(maxLength: 64, nullable: true)
+                    Name = table.Column<string>(maxLength: 64, nullable: true),
+                    Info = table.Column<string>(nullable: true),
+                    Avatar = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -57,6 +72,35 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "AnnouncementTenant",
+                columns: table => new
+                {
+                    AnnouncementId = table.Column<Guid>(nullable: false),
+                    TenatId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AnnouncementTenant", x => new { x.TenatId, x.AnnouncementId });
+                    table.ForeignKey(
+                        name: "FK_AnnouncementTenant_Announcement_AnnouncementId",
+                        column: x => x.AnnouncementId,
+                        principalTable: "Announcement",
+                        principalColumn: "AnnouncementId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AnnouncementTenant_Tenant_TenatId",
+                        column: x => x.TenatId,
+                        principalTable: "Tenant",
+                        principalColumn: "TenatId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AnnouncementTenant_AnnouncementId",
+                table: "AnnouncementTenant",
+                column: "AnnouncementId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_Building_ManagementCompanyId",
                 table: "Building",
@@ -66,7 +110,13 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AnnouncementTenant");
+
+            migrationBuilder.DropTable(
                 name: "Building");
+
+            migrationBuilder.DropTable(
+                name: "Announcement");
 
             migrationBuilder.DropTable(
                 name: "Tenant");
