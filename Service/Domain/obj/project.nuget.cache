@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "e9hUprDJkC2wRn2vaO1/2aQBd9jaUIsdv0DUrCU60phuRw4Hq49rlZHUy/zcaJw1QQ1GdZEDaIpTH/VjXaeE4Q==",
+  "dgSpecHash": "Nht695bAey1AfpgdND0s4RVcvVw+7gZLar4VqAMRd2Z9AVpd+p2b0fW8eBkdZbmd7Zm7PvFrrhFrcMrfXWjidQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\хакатон\\репа\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ilsiy\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
