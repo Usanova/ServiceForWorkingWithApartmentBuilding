@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Domain.Polls
+{
+    public sealed class Poll
+    {
+        public Guid PollId { get; private set; }
+
+        public string Question { get; private set; }
+
+        public ICollection<AnswerOption> AnswerOption { get; private set; }
+
+        public Guid OwnerId { get; private set; }
+
+        public ICollection<PollTenant> PollTenat { get; private set; }
+
+    }
+}
