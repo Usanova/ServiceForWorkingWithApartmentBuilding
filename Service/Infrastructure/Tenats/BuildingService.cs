@@ -15,15 +15,15 @@ namespace Infrastructure.Tenats
             this.context = context;
         }
 
-        public Task<Building> Get(Guid buildingId, CancellationToken cancellationToken)
+        public async Task<Building> Get(Guid buildingId, CancellationToken cancellationToken)
         {
-            return context.Buildings
+            return await context.Buildings
                 .SingleOrDefaultAsync(b => b.BuildingId == buildingId, cancellationToken);
         }
 
-        public Task<Building> Get(string address, CancellationToken cancellationToken)
+        public async Task<Building> Get(string address, CancellationToken cancellationToken)
         {
-            return context.Buildings
+            return await context.Buildings
                  .SingleOrDefaultAsync(b => b.Address == address, cancellationToken);
         }
     }

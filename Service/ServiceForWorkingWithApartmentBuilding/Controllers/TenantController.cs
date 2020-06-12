@@ -26,7 +26,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
                 return BadRequest(new { errorText = "Invalid username or password." });
             }
 
-            return await GetToken(tenant.TenatId);
+            return await GetToken(tenant.TenantId);
         }
 
 
@@ -72,7 +72,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
             await repository.Save(tenant);
 
-            return await GetToken(tenant.TenatId);
+            return await GetToken(tenant.TenantId);
         }
 
         [HttpDelete("tenants/{tenantId}")]

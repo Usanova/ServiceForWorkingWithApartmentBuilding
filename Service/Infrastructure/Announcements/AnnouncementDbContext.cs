@@ -25,7 +25,7 @@ namespace Infrastructure.Announcements
             modelBuilder.Entity<AnnouncementTenant>(builder =>
             {
                 builder.ToTable("AnnouncementTenant");
-                builder.HasKey(at => new { at.TenatId, at.AnnouncementId });
+                builder.HasKey(at => at.AnnouncementTenantId);
             });
         }
     }

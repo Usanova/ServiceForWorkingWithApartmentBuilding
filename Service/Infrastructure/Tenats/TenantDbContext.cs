@@ -20,7 +20,7 @@ namespace Infrastructure.Tenats
             modelBuilder.Entity<Tenant>(t =>
             {
                 t.ToTable("Tenant");
-                t.HasKey(t => t.TenatId);
+                t.HasKey(t => t.TenantId);
             });
         }
     }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

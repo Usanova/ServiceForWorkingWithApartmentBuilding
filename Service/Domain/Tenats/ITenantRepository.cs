@@ -8,14 +8,14 @@ namespace Domain.Tenats
 {
     public interface ITenantRepository
     {
-        Task<Tenant> Get(Guid tenatId, CancellationToken cancellationToken);
+        Task<Tenant> Get(Guid tenantId, CancellationToken cancellationToken);
 
-        Task<Tenant> Get(string name, string surname, CancellationToken cancellationToken);
+        Task<Tenant> Get(string name, string password, CancellationToken cancellationToken);
 
         Task<Tenant> Get(string name, string surname, string password, CancellationToken cancellationToken);
 
-        Task Save(Tenant tenat);
+        Task Save(Tenant tenant);
 
-        Task Delete(Tenant tenat);
+        Task Delete(Tenant tenant);
     }
 }

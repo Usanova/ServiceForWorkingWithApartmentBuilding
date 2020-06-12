@@ -15,10 +15,10 @@ namespace Infrastructure.Tenats
             this.context = context;
         }
 
-        public async Task<Tenant> Get(Guid tenetId, CancellationToken cancellationToken)
+        public async Task<Tenant> Get(Guid tenantId, CancellationToken cancellationToken)
         {
             return await context.Tenants
-                .SingleOrDefaultAsync(t => t.TenatId == tenetId);
+                .SingleOrDefaultAsync(t => t.TenantId == tenantId);
         }
 
         public async Task<Tenant> Get(string name, string password, CancellationToken cancellationToken)
@@ -33,17 +33,17 @@ namespace Infrastructure.Tenats
                  .SingleOrDefaultAsync(t => t.Name == name && t.Surname == surname && t.Password == password);
         }
 
-        public async Task Save(Tenant tenat)
+        public async Task Save(Tenant tenant)
         {
-            if (context.Entry(tenat).State == EntityState.Detached)
-                context.Tenants.Add(tenat);
+            if (context.Entry(tenant).State == EntityState.Detached)
+                context.Tenants.Add(tenant);
 
             await context.SaveChangesAsync();
         }
 
-        public async Task Delete(Tenant tenat)
+        public async Task Delete(Tenant tenant)
         {
-            context.Tenants.Remove(tenat);
+            context.Tenants.Remove(tenant);
 
             await context.SaveChangesAsync();
         }

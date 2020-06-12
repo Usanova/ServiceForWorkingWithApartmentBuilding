@@ -18,14 +18,29 @@ namespace Infrastructure.Announcements
             this.context = context;
         }
 
-        public async Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenatId, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenantId, CancellationToken cancellationToken)
         {
             var announcementTenants = context.AnnouncementTenant
-                .Where(at => at.TenatId == tenatId)
+                .Where(at => at.TenantId == tenantId)
                 .Select(at => at.AnnouncementId);
 
             return await context.Announcements
                 .Where(a => announcementTenants.Contains(a.AnnouncementId))
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenantId, int offset, int count, 
+            CancellationToken cancellationToken)
+        {
+            var announcementTenants = context.AnnouncementTenant
+                 .Where(at => at.TenantId == tenantId)
+                 .Select(at => at.AnnouncementId);
+
+            return await context.Announcements
+                .Where(a => announcementTenants.Contains(a.AnnouncementId))
+                .OrderBy(a => a.CreateDate)
+                .Skip(offset)
+                .Take(count)
                 .ToListAsync(cancellationToken);
         }
 

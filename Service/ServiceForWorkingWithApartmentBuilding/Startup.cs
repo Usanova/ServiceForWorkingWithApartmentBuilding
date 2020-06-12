@@ -36,7 +36,7 @@ namespace ServiceForWorkingWithApartmentBuilding
 
             #region Tenat
 
-            services.AddNpgsqlDbContext<TenantDbContext>(connectionString);
+            services.AddNpgsqlDbContext<Infrastructure.Tenats.TenantDbContext>(connectionString);
             services.AddNpgsqlDbContext<BuildingDbContext>(connectionString);
 
             services.AddScoped<Domain.Tenats.ITenantRepository, Infrastructure.Tenats.TenantRepository>();
@@ -48,9 +48,13 @@ namespace ServiceForWorkingWithApartmentBuilding
             #region Announcement
 
             services.AddNpgsqlDbContext<AnnouncementDbContext>(connectionString);
+            services.AddNpgsqlDbContext<Infrastructure.Announcements.TenantDbContext>(connectionString);
 
             services.AddScoped<Domain.Announcements.IAnnouncementRepository, Infrastructure.Announcements.AnnouncementRepository>();
-            services.AddScoped<Infrastructure.Announcements.Query.GetListAnnouncement>();    
+            services.AddScoped<Domain.Announcements.AnnouncementManager>();
+            services.AddScoped<Infrastructure.Announcements.Query.GetListAnnouncement>();
+            services.AddScoped<Domain.Announcements.ITenantService, 
+                Infrastructure.Announcements.TenantService>();
 
             #endregion
 
@@ -124,7 +128,7 @@ namespace ServiceForWorkingWithApartmentBuilding
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            //app.UseRewriter(new RewriteOptions().AddRedirect(@"^$", "swagger", (int)HttpStatusCode.Redirect));
+            app.UseRewriter(new RewriteOptions().AddRedirect(@"^$", "swagger", (int)HttpStatusCode.Redirect));
         }
     }
 }

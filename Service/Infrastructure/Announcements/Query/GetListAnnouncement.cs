@@ -16,14 +16,23 @@ namespace Infrastructure.Announcements.Query
             this.repository = repository;
         }
 
-        public async Task<IEnumerable<AnnouncementReference>> Handler(Guid tenatId, CancellationToken cancellationToken)
+        public async Task<Page<AnnouncementReference>> Handler(Guid tenantId, int offset, int count, 
+            CancellationToken cancellationToken)
         {
-            return (await repository.GetAnnouncementsByTenatId(tenatId, cancellationToken))
+            var announcements = (await repository.GetAnnouncementsByTenatId(tenantId, offset, count, cancellationToken))
                 .Select(a => new AnnouncementReference()
                 {
                     Title = a.Title,
                     Content = a.Content
-                });
+                })
+                .ToList();
+
+            return new Page<AnnouncementReference>
+            {
+                Count = announcements.Count,
+                Offset = offset,
+                Values = announcements
+            };
         }
     }
 }

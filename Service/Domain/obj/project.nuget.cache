@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GhOmiC1hr+gAuo5Kq1DCqd8FqyAXBPgPWb5J/khXK1LyWdRlVnw/h/mQbe5jE4jS+/IYra73RHwg6LTewvOIQA==",
+  "dgSpecHash": "e9hUprDJkC2wRn2vaO1/2aQBd9jaUIsdv0DUrCU60phuRw4Hq49rlZHUy/zcaJw1QQ1GdZEDaIpTH/VjXaeE4Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\usano\\Desktop\\хакатон\\ServiceForWorkingWithApartmentBuinding\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
