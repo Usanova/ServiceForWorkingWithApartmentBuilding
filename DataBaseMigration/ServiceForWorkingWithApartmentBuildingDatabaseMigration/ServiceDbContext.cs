@@ -32,7 +32,6 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                     .WithOne()
                     .HasForeignKey(pt => pt.TenantId)
                     .HasPrincipalKey(t => t.TenantId);
-                builder.Property(t => t.MeetId).HasMaxLength(64);
             });
 
             modelBuilder.Entity<ManagementCompany>(builder =>
@@ -40,6 +39,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.ToTable("ManagementCompany");
                 builder.HasKey(mc => mc.ManagementCompanyId);
                 builder.Property(mc => mc.Name).HasMaxLength(64);
+                builder.Property(mc => mc.Password).HasMaxLength(64);
                 builder.HasMany(mc => mc.Buildings)
                     .WithOne()
                     .HasForeignKey(mc => mc.ManagementCompanyId)
@@ -51,6 +51,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.ToTable("Building");
                 builder.HasKey(b => b.BuildingId);
                 builder.Property(b => b.Address).HasMaxLength(64);
+                builder.Property(t => t.MeetId).HasMaxLength(64);
             });
 
             modelBuilder.Entity<Announcement>(builder =>
@@ -87,6 +88,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.ToTable("Poll");
                 builder.HasKey(a => a.PollId);
                 builder.Property(a => a.Question).HasMaxLength(64);
+                builder.Property(a => a.State).HasConversion<string>().HasMaxLength(64);
                 builder.HasMany(a => a.AnswerOption)
                     .WithOne()
                     .HasForeignKey(pt => pt.PollId)

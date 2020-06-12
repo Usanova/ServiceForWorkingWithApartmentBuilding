@@ -11,5 +11,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
         public string Address { get; private set; }
 
         public Guid ManagementCompanyId { get; private set; }
+
+        public string MeetId { get; private set; }
     }
 }
