@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Domain.Tenats;
 using Infrastructure.Announcements;
+using Infrastructure.Polls;
 using Infrastructure.Tenats;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OAuth;
@@ -57,6 +58,18 @@ namespace ServiceForWorkingWithApartmentBuilding
                 Infrastructure.Announcements.TenantService>();
 
             #endregion
+
+            #region Poll
+
+            services.AddNpgsqlDbContext<Infrastructure.Polls.PollDbContext>(connectionString);
+
+            services.AddScoped<Domain.Polls.IPollRepository, Infrastructure.Polls.PollRepository>();
+            services.AddScoped<Infrastructure.Polls.Query.GetListPoll>();
+            services.AddScoped<Infrastructure.Polls.Query.GetListAnswerOption>();
+
+            #endregion
+
+
 
             services.AddSwagger();
 
