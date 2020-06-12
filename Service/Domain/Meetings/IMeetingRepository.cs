@@ -4,10 +4,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Domain.Meetings
+namespace Domain.Tenats
 {
     interface IMeetingRepository
     {
+        Task Get(Guid MeetingId, CancellationToken cancellationToken);
         Task Save(Meeting meeting, CancellationToken cancellationToken);
     }
 }

@@ -12,7 +12,7 @@ namespace Domain.Tenats
             int entranceNumber, 
             int flatNumber)
         {
-            TenatId = Guid.NewGuid();
+            TenantId = Guid.NewGuid();
             Name = name;
             Surname = surname;
             Password = password;
@@ -27,7 +27,7 @@ namespace Domain.Tenats
             Avatar = avatar;
         }
 
-        public Guid TenatId { get; private set; }
+        public Guid TenantId { get; private set; }
 
         public string Name { get; private set; }
 

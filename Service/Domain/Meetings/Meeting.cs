@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Meetings
+namespace Domain.Tenats
 {
     public sealed class Meeting
     {

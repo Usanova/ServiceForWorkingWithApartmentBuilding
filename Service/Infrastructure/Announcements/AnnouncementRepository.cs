@@ -18,10 +18,10 @@ namespace Infrastructure.Announcements
             this.context = context;
         }
 
-        public async Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenatId, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenantId, CancellationToken cancellationToken)
         {
             var announcementTenants = context.AnnouncementTenant
-                .Where(at => at.TenatId == tenatId)
+                .Where(at => at.TenantId == tenantId)
                 .Select(at => at.AnnouncementId);
 
             return await context.Announcements

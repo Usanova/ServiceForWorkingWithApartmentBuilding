@@ -18,7 +18,7 @@ namespace Infrastructure.Tenats
         public async Task<Tenant> Get(Guid tenetId, CancellationToken cancellationToken)
         {
             return await context.Tenants
-                .SingleOrDefaultAsync(t => t.TenatId == tenetId);
+                .SingleOrDefaultAsync(t => t.TenantId == tenetId);
         }
 
         public async Task<Tenant> Get(string name, string password, CancellationToken cancellationToken)

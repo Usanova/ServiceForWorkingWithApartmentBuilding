@@ -7,7 +7,7 @@ namespace Domain.Announcements
 {
     public interface IAnnouncementRepository
     {
-        Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenatId, CancellationToken cancellationToken);
+        Task<IEnumerable<Announcement>> GetAnnouncementsByTenatId(Guid tenantId, CancellationToken cancellationToken);
 
         Task Save(Announcement announcement, CancellationToken cancellationToken);
     }
