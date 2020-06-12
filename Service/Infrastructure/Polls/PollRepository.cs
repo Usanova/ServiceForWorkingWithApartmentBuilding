@@ -20,7 +20,7 @@ namespace Infrastructure.Polls
         public async Task<IEnumerable<Poll>> GetPollsByTenantId(Guid tenatId, CancellationToken cancellationToken)
         {
             var pollTenants = context.PollTenant
-                 .Where(at => at.TenantId == tenatId)
+                .Where(at => at.TenantId == tenatId)
                 .Select(at => at.PollId);
 
             return await context.Polls
@@ -34,6 +34,13 @@ namespace Infrastructure.Polls
                 context.Polls.Add(poll);
 
             await context.SaveChangesAsync();
+        }
+
+        public async Task<Poll> GetWithAnswerOptions(Guid pollId, CancellationToken cancellationToken)
+        {
+            return await context.Polls
+                 .Include(p => p.AnswerOption)
+                 .SingleOrDefaultAsync(p => p.PollId == pollId, cancellationToken);                 
         }
     }
 }

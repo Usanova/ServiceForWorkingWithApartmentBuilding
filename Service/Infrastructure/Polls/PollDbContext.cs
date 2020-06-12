@@ -36,7 +36,7 @@ namespace Infrastructure.Polls
             modelBuilder.Entity<PollTenant>(builder =>
             {
                 builder.ToTable("PollTenant");
-                builder.HasKey(at => new { at.TenantId, at.PollId });
+                builder.HasKey(a => a.PollTenantId);
             });
         }
     }

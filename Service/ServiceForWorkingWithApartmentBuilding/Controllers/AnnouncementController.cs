@@ -24,12 +24,12 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
         [HttpGet("/Announcement/{tenatId}")]
         public async Task<IActionResult> GetAnnouncements(CancellationToken cancellationToken,
-            [FromRoute] Guid tenatId,
+            [FromRoute] Guid tenantId,
             [FromServices] GetListAnnouncement getListAnnouncement,
             [FromQuery] int? offset = 0,
             [FromQuery] int? count = 10)
         {
-            return Ok(await getListAnnouncement.Handler(tenatId, offset.Value, count.Value, cancellationToken));
+            return Ok(await getListAnnouncement.Handler(tenantId, offset.Value, count.Value, cancellationToken));
         }
     }
 }

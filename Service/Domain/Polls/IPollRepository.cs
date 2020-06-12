@@ -11,5 +11,8 @@ namespace Domain.Polls
         Task<IEnumerable<Poll>> GetPollsByTenantId(Guid tenantId, CancellationToken cancellationToken);
 
         Task Save(Poll poll, CancellationToken cancellationToken);
+
+        Task<Poll> GetWithAnswerOptions(Guid pollId, CancellationToken cancellationToken);
+
     }
 }
