@@ -11,5 +11,9 @@ namespace Domain.Tenats
         Task<Building> Get(Guid buildingId, CancellationToken cancellationToken);
 
         Task<Building> Get(string address, CancellationToken cancellationToken);
+
+        Task<IEnumerable<string>> GetAllAddresses(CancellationToken cancellationToken);
+
+        Task<string> GetNameOfManagmantCompany(Building building, CancellationToken cancellationToken);
     }
 }

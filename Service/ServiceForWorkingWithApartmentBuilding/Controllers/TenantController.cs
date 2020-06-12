@@ -1,4 +1,5 @@
 ﻿using Domain.Tenats;
+using Infrastructure.Tenats.Query;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ServiceForWorkingWithApartmentBuilding.Models.Tenat;
@@ -75,21 +76,6 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             return await GetToken(tenant.TenantId);
         }
 
-        [HttpDelete("tenants/{tenantId}")]
-        public async Task<IActionResult> DeleteTenat(CancellationToken cancellationToken,
-        [FromRoute] Guid tenatId,
-        [FromServices] ITenantRepository repository)
-        {
-            var tenant = await repository.Get(tenatId, cancellationToken);
-
-            if (tenant == null)
-                return NoContent();
-
-            await repository.Delete(tenant);
-
-            return NoContent();
-        }
-
         private async Task<IActionResult> GetToken(Guid userId)
         {
             var claims = new List<Claim>
@@ -119,6 +105,37 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             };
 
             return Json(response);
+        }
+
+        [HttpGet("/tenants/profile/{name}/{password}")]
+        public async Task<IActionResult> GetTenantProfile(CancellationToken cancellationToken,
+        [FromRoute] string name,
+        [FromRoute] string password,
+        [FromServices] GetProfileView getProfileView)
+        {
+            return Ok(await getProfileView.Handler(name, password, cancellationToken));
+        }
+
+        [HttpDelete("/tenants/{tenantId}")]
+        public async Task<IActionResult> DeleteTenat(CancellationToken cancellationToken,
+        [FromRoute] Guid tenatId,
+        [FromServices] ITenantRepository repository)
+        {
+            var tenant = await repository.Get(tenatId, cancellationToken);
+
+            if (tenant == null)
+                return NoContent();
+
+            await repository.Delete(tenant);
+
+            return NoContent();
+        }
+
+        [HttpGet("/tenats/addresses")]
+        public async Task<IActionResult> GetAllAddresses(CancellationToken cancellationToken,
+            [FromServices] GetListAddress getListAddress)
+        {
+            return Ok(await getListAddress.Handler(cancellationToken));
         }
     }
 }

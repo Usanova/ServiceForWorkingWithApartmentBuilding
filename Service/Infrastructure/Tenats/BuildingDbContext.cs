@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Infrastructure.Tenats
@@ -13,7 +14,9 @@ namespace Infrastructure.Tenats
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
-        internal DbSet<Building> Buildings { get; set; } 
+        internal DbSet<Building> Buildings { get; set; }
+
+        internal DbSet<ManagementCompany> ManagementCompanies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +27,19 @@ namespace Infrastructure.Tenats
                 b.ToTable("Building");
                 b.HasKey(b => b.BuildingId);
             });
+
+            modelBuilder.Entity<ManagementCompany>(b =>
+            {
+                b.ToTable("ManagementCompany");
+                b.HasKey(b => b.ManagementCompanyId);
+            });
         }
+    }
+
+    public class ManagementCompany
+    {
+        public Guid ManagementCompanyId { get; private set; }
+
+        public string Name { get; private set; }
     }
 }

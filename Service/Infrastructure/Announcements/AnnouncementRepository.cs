@@ -38,7 +38,7 @@ namespace Infrastructure.Announcements
 
             return await context.Announcements
                 .Where(a => announcementTenants.Contains(a.AnnouncementId))
-                .OrderBy(a => a.CreateDate)
+                .OrderByDescending(a => a.CreateDate)
                 .Skip(offset)
                 .Take(count)
                 .ToListAsync(cancellationToken);

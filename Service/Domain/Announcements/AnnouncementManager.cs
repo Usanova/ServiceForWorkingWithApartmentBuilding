@@ -17,7 +17,7 @@ namespace Domain.Announcements
             this.tenantService = tenantService;
         }
 
-        public async Task Create(string title, string content, Guid buildingId, CancellationToken cancellationToken)
+        public async Task CreateByBuilding(string title, string content, Guid buildingId, CancellationToken cancellationToken)
         {
             var announcement = new Announcement(title, content);
 

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Polls.Query
 {
-    public sealed class GetListPoll
+    public sealed class GetListPollForTenant
     {
         private readonly IPollRepository repository;
 
-        public GetListPoll(IPollRepository repository)
+        public GetListPollForTenant(IPollRepository repository)
         {
             this.repository = repository;
         }

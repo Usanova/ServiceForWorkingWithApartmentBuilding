@@ -44,7 +44,5 @@ namespace Domain.Tenats
         public int FlatNumber { get; private set; }
 
         public byte[] Avatar { get; set; }
-
-        public Guid MeetId { get; private set; }
     }
 }

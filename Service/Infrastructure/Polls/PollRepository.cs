@@ -17,6 +17,12 @@ namespace Infrastructure.Polls
             this.context = context;
         }
 
+        public async Task<Poll> Get(Guid pollId, CancellationToken cancellationToken)
+        {
+            return await context.Polls
+                .SingleOrDefaultAsync(p => p.PollId == pollId, cancellationToken);
+        }
+
         public async Task<IEnumerable<Poll>> GetPollsByTenantId(Guid tenatId, CancellationToken cancellationToken)
         {
             var pollTenants = context.PollTenant
@@ -25,6 +31,14 @@ namespace Infrastructure.Polls
 
             return await context.Polls
                 .Where(p => pollTenants.Contains(p.PollId) && p.State == PollState.Active)
+                .ToListAsync(cancellationToken);
+        }
+
+        public async Task<IEnumerable<Poll>> GetPollsByManagementCompanyId(Guid managementCompanyId, 
+            CancellationToken cancellationToken)
+        {
+            return await context.Polls
+                .Where(p => p.OwnerId == managementCompanyId && p.State == PollState.Active)
                 .ToListAsync(cancellationToken);
         }
 

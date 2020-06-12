@@ -44,6 +44,8 @@ namespace ServiceForWorkingWithApartmentBuilding
             services.AddScoped<Domain.Tenats.ITenantRepository, Infrastructure.Tenats.TenantRepository>();
             services.AddScoped<Domain.Tenats.IBuildingService, Infrastructure.Tenats.BuildingService>();
             services.AddScoped<Domain.Tenats.TenantManager>();
+            services.AddScoped<Infrastructure.Tenats.Query.GetProfileView>();
+            services.AddScoped<Infrastructure.Tenats.Query.GetListAddress>();
 
             #endregion
 
@@ -63,14 +65,16 @@ namespace ServiceForWorkingWithApartmentBuilding
             #region Poll
 
             services.AddNpgsqlDbContext<Infrastructure.Polls.PollDbContext>(connectionString);
+            services.AddNpgsqlDbContext<Infrastructure.Polls.TenantDbContext>(connectionString);
 
             services.AddScoped<Domain.Polls.IPollRepository, Infrastructure.Polls.PollRepository>();
-            services.AddScoped<Infrastructure.Polls.Query.GetListPoll>();
+            services.AddScoped<Domain.Polls.ITenantService, Infrastructure.Polls.TenantService>();
+            services.AddScoped<Domain.Polls.PollManager>();
+            services.AddScoped<Infrastructure.Polls.Query.GetListPollForTenant>();
             services.AddScoped<Infrastructure.Polls.Query.GetListAnswerOption>();
+            services.AddScoped<Infrastructure.Polls.Query.GetListPollForManagementCompany>();
 
             #endregion
-
-
 
             #region Meeting
 

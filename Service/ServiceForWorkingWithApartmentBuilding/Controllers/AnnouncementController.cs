@@ -16,7 +16,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             [System.Web.Http.FromBody] CreateAnnouncementBinding binding,
             [FromServices] AnnouncementManager mananger)
         {
-            await mananger.Create(binding.Title, binding.Content, buildingId, cancellationToken);
+            await mananger.CreateByBuilding(binding.Title, binding.Content, buildingId, cancellationToken);
 
             return Ok();
         }

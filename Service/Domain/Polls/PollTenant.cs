@@ -6,6 +6,11 @@ namespace Domain.Polls
 {   
     public sealed class PollTenant
     {
+        public PollTenant(Guid tenantId)
+        {
+            TenantId = tenantId;
+        }
+
         public Guid PollTenantId { get; private set; }
 
         public Guid PollId { get; private set; }
