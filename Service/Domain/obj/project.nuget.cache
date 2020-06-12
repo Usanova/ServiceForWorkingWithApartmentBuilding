@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Nht695bAey1AfpgdND0s4RVcvVw+7gZLar4VqAMRd2Z9AVpd+p2b0fW8eBkdZbmd7Zm7PvFrrhFrcMrfXWjidQ==",
+  "dgSpecHash": "Ng7WdzJorZ/QT6Wc3W4kI4pytDGgNNGga6LRztXcx5eQgP3YRXKRpohZKQpbI+tZl8T7aY5kMfvY/sFHIRg6ng==",
   "success": true,
-  "projectFilePath": "E:\\хакатон\\репа\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ilsiy\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\12\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }
