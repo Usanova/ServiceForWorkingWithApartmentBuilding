@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
 {
-    public partial class Addpoll : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 {
                     AnnouncementId = table.Column<Guid>(nullable: false),
                     Title = table.Column<string>(maxLength: 64, nullable: true),
-                    Content = table.Column<string>(maxLength: 1024, nullable: true)
+                    Content = table.Column<string>(maxLength: 1024, nullable: true),
+                    CreateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -35,17 +36,29 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Poll",
+                name: "Meeting",
                 columns: table => new
                 {
-                    OwnerId = table.Column<Guid>(nullable: false),
-                    PollId = table.Column<Guid>(nullable: false),
-                    Question = table.Column<string>(maxLength: 64, nullable: true)
+                    MeetingId = table.Column<Guid>(nullable: false),
+                    Name = table.Column<string>(maxLength: 64, nullable: true),
+                    OwnerId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Poll", x => x.OwnerId);
-                    table.UniqueConstraint("AK_Poll_PollId", x => x.PollId);
+                    table.PrimaryKey("PK_Meeting", x => x.MeetingId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Poll",
+                columns: table => new
+                {
+                    PollId = table.Column<Guid>(nullable: false),
+                    Question = table.Column<string>(maxLength: 64, nullable: true),
+                    OwnerId = table.Column<Guid>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Poll", x => x.PollId);
                 });
 
             migrationBuilder.CreateTable(
@@ -60,7 +73,8 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                     BuildingId = table.Column<Guid>(nullable: false),
                     EntranceNumber = table.Column<int>(nullable: false),
                     FlatNumber = table.Column<int>(nullable: false),
-                    Avatar = table.Column<byte[]>(nullable: true)
+                    Avatar = table.Column<byte[]>(nullable: true),
+                    MeetId = table.Column<string>(maxLength: 64, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -90,14 +104,14 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 name: "AnswerOption",
                 columns: table => new
                 {
-                    PollId = table.Column<Guid>(nullable: false),
                     AnswerOptionId = table.Column<Guid>(nullable: false),
+                    PollId = table.Column<Guid>(nullable: false),
                     Answer = table.Column<string>(nullable: true),
                     VotersNumber = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AnswerOption", x => x.PollId);
+                    table.PrimaryKey("PK_AnswerOption", x => x.AnswerOptionId);
                     table.ForeignKey(
                         name: "FK_AnswerOption_Poll_PollId",
                         column: x => x.PollId,
@@ -110,12 +124,13 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 name: "AnnouncementTenant",
                 columns: table => new
                 {
+                    AnnouncementTenantId = table.Column<Guid>(nullable: false),
                     AnnouncementId = table.Column<Guid>(nullable: false),
                     TenantId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AnnouncementTenant", x => new { x.TenantId, x.AnnouncementId });
+                    table.PrimaryKey("PK_AnnouncementTenant", x => x.AnnouncementTenantId);
                     table.ForeignKey(
                         name: "FK_AnnouncementTenant_Announcement_AnnouncementId",
                         column: x => x.AnnouncementId,
@@ -134,12 +149,13 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 name: "PollTenant",
                 columns: table => new
                 {
+                    PollTenantId = table.Column<Guid>(nullable: false),
                     PollId = table.Column<Guid>(nullable: false),
                     TenantId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PollTenant", x => new { x.TenantId, x.PollId });
+                    table.PrimaryKey("PK_PollTenant", x => x.PollTenantId);
                     table.ForeignKey(
                         name: "FK_PollTenant_Poll_PollId",
                         column: x => x.PollId,
@@ -160,6 +176,16 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 column: "AnnouncementId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AnnouncementTenant_TenantId",
+                table: "AnnouncementTenant",
+                column: "TenantId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AnswerOption_PollId",
+                table: "AnswerOption",
+                column: "PollId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Building_ManagementCompanyId",
                 table: "Building",
                 column: "ManagementCompanyId");
@@ -168,6 +194,11 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
                 name: "IX_PollTenant_PollId",
                 table: "PollTenant",
                 column: "PollId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PollTenant_TenantId",
+                table: "PollTenant",
+                column: "TenantId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -180,6 +211,9 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Migrations
 
             migrationBuilder.DropTable(
                 name: "Building");
+
+            migrationBuilder.DropTable(
+                name: "Meeting");
 
             migrationBuilder.DropTable(
                 name: "PollTenant");

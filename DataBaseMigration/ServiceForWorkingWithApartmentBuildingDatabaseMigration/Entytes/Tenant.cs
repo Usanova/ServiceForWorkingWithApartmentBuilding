@@ -26,5 +26,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
         public ICollection<AnnouncementTenant> AnnouncementTenant { get; private set; }
 
         public ICollection<PollTenant> PollTenant { get; private set; }
+
+        public string MeetId { get; private set; }
     }
 }

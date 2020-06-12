@@ -32,6 +32,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                     .WithOne()
                     .HasForeignKey(pt => pt.TenantId)
                     .HasPrincipalKey(t => t.TenantId);
+                builder.Property(t => t.MeetId).HasMaxLength(64);
             });
 
             modelBuilder.Entity<ManagementCompany>(builder =>
@@ -58,6 +59,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.HasKey(a => a.AnnouncementId);
                 builder.Property(a => a.Title).HasMaxLength(64);
                 builder.Property(a => a.Content).HasMaxLength(1024);
+                builder.Property(a => a.CreateDate);
                 builder.HasMany(a => a.AnnouncementTenant)
                    .WithOne()
                    .HasForeignKey(at => at.AnnouncementId)
@@ -67,14 +69,15 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
             modelBuilder.Entity<AnnouncementTenant>(builder =>
             {
                 builder.ToTable("AnnouncementTenant");
-                builder.HasKey(at => new { at.TenantId, at.AnnouncementId });
+                builder.HasKey(at => at.AnnouncementTenantId);
+                builder.Property(at => at.AnnouncementId);
+                builder.Property(at => at.TenantId);
             });
 
             modelBuilder.Entity<AnswerOption>(builder =>
             {
                 builder.ToTable("AnswerOption");
                 builder.HasKey(a => a.AnswerOptionId);
-                builder.HasKey(a => a.PollId);
                 builder.Property(a => a.Answer);
                 builder.Property(a => a.VotersNumber);
             });
@@ -88,7 +91,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                     .WithOne()
                     .HasForeignKey(pt => pt.PollId)
                     .HasPrincipalKey(a => a.PollId);
-                builder.HasKey(a => a.OwnerId);
+                builder.Property(a => a.OwnerId);
                 builder.HasMany(a => a.PollTenat)
                    .WithOne()
                    .HasForeignKey(pt => pt.PollId)
@@ -98,7 +101,17 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
             modelBuilder.Entity<PollTenant>(builder =>
             {
                 builder.ToTable("PollTenant");
-                builder.HasKey(at => new { at.TenantId, at.PollId });
+                builder.HasKey(at => at.PollTenantId);
+                builder.Property(at => at.PollId);
+                builder.Property(at => at.TenantId);
+            });
+
+            modelBuilder.Entity<Meeting>(builder =>
+            {
+                builder.ToTable("Meeting");
+                builder.HasKey(m => m.MeetingId);
+                builder.Property(m => m.Name).HasMaxLength(64);
+                builder.Property(m => m.OwnerId);
             });
         }
     }

@@ -12,6 +12,8 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
 
         public string Content { get; private set; }
 
+        public DateTime CreateDate { get; private set; }
+
         public ICollection<AnnouncementTenant> AnnouncementTenant { get; private set; }
     }
 }
