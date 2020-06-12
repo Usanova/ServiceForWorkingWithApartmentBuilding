@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ServiceForWorkingWithApartmentBuilding.Models.Meeting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 

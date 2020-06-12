@@ -23,6 +23,8 @@ namespace Domain.Meetings
             var meeting = new Meeting(name, ownerId);
 
             await buildingService.SetMeetId(meeting.GetId().ToString(), buildingId, cancellationToken);
+
+            await meetingRepository.Save(meeting, cancellationToken);
         }
 
         public async Task Close(Guid meetingId, CancellationToken cancellationToken)

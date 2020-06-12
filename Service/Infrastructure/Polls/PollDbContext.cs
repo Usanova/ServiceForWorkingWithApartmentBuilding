@@ -31,6 +31,7 @@ namespace Infrastructure.Polls
             {
                 builder.ToTable("Poll");
                 builder.HasKey(a => a.PollId);
+                builder.Property(a => a.State).HasConversion<string>().HasMaxLength(64);
             });
 
             modelBuilder.Entity<PollTenant>(builder =>

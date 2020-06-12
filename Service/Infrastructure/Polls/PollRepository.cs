@@ -24,7 +24,7 @@ namespace Infrastructure.Polls
                 .Select(at => at.PollId);
 
             return await context.Polls
-                .Where(a => pollTenants.Contains(a.PollId))
+                .Where(p => pollTenants.Contains(p.PollId) && p.State == PollState.Active)
                 .ToListAsync(cancellationToken);
         }
 

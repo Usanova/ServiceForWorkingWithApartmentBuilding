@@ -15,3 +15,11 @@ C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug
 C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
