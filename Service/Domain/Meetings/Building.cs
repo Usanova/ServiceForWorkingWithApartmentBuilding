@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Tenats
+namespace Domain.Meetings
 {
     public sealed class Building
     {
         public Guid BuildingId { get; private set; }
-
-        public string Address { get; private set; }
-
-        public Guid ManagementCompanyId { get; private set; }
-
         public string MeetId { get; private set; }
+
+        public void UpdateMeetId(string meetId)
+        {
+            MeetId = meetId;
+        }
     }
 }

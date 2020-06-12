@@ -6,8 +6,8 @@ namespace Domain.Announcements
 {
     public class Tenant
     {
-        public Guid TenantId { get; set; }
+        public Guid TenantId { get; private set; }
 
-        public Guid BuildingId { get; set; }
+        public Guid BuildingId { get; private set; }
     }
 }

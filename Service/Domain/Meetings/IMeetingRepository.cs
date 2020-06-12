@@ -10,5 +10,7 @@ namespace Domain.Meetings
     {
         Task<Meeting> Get(Guid MeetingId, CancellationToken cancellationToken);
         Task Save(Meeting meeting, CancellationToken cancellationToken);
+
+        
     }
 }

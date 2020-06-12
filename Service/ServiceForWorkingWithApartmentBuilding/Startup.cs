@@ -38,7 +38,7 @@ namespace ServiceForWorkingWithApartmentBuilding
             #region Tenat
 
             services.AddNpgsqlDbContext<Infrastructure.Tenats.TenantDbContext>(connectionString);
-            services.AddNpgsqlDbContext<BuildingDbContext>(connectionString);
+            services.AddNpgsqlDbContext<Infrastructure.Tenats.BuildingDbContext>(connectionString);
 
             services.AddScoped<Domain.Tenats.ITenantRepository, Infrastructure.Tenats.TenantRepository>();
             services.AddScoped<Domain.Tenats.IBuildingService, Infrastructure.Tenats.BuildingService>();
@@ -62,8 +62,11 @@ namespace ServiceForWorkingWithApartmentBuilding
             #region Meeting
 
             services.AddNpgsqlDbContext<MeetingDbContext>(connectionString);
+            services.AddNpgsqlDbContext<Infrastructure.Meetings.BuildingDbContext>(connectionString);
 
             services.AddScoped<Domain.Meetings.IMeetingRepository, Infrastructure.Meetings.MeetingRepository>();
+            services.AddScoped<Domain.Meetings.MeetingManager>();
+            services.AddScoped<Domain.Meetings.IBuildingService, Infrastructure.Meetings.BuildingService>();
 
             #endregion
 

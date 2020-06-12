@@ -7,3 +7,12 @@ C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuinding\Dom
 C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuinding\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuinding\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
 C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuinding\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
