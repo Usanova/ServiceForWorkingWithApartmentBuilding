@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Domain.Tenats;
 using Infrastructure.Announcements;
+using Infrastructure.Meetings;
 using Infrastructure.Tenats;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OAuth;
@@ -55,6 +56,14 @@ namespace ServiceForWorkingWithApartmentBuilding
             services.AddScoped<Infrastructure.Announcements.Query.GetListAnnouncement>();
             services.AddScoped<Domain.Announcements.ITenantService, 
                 Infrastructure.Announcements.TenantService>();
+
+            #endregion
+
+            #region Meeting
+
+            services.AddNpgsqlDbContext<MeetingDbContext>(connectionString);
+
+            services.AddScoped<Domain.Meetings.IMeetingRepository, Infrastructure.Meetings.MeetingRepository>();
 
             #endregion
 
