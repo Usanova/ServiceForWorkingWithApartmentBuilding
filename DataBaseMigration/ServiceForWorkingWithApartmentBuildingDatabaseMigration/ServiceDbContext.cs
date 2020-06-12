@@ -15,7 +15,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
             modelBuilder.Entity<Tenant>(builder =>
             {
                 builder.ToTable("Tenant");
-                builder.HasKey(t => t.TenatId);
+                builder.HasKey(t => t.TenantId);
                 builder.Property(t => t.Name).HasMaxLength(32);
                 builder.Property(t => t.Surname).HasMaxLength(32);
                 builder.Property(t => t.Password).HasMaxLength(64);
@@ -26,8 +26,12 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.Property(t => t.Avatar);
                 builder.HasMany(t => t.AnnouncementTenant)
                     .WithOne()
-                    .HasForeignKey(at => at.TenatId)
-                    .HasPrincipalKey(t => t.TenatId);
+                    .HasForeignKey(at => at.TenantId)
+                    .HasPrincipalKey(t => t.TenantId);
+                builder.HasMany(t => t.PollTenant)
+                    .WithOne()
+                    .HasForeignKey(pt => pt.TenantId)
+                    .HasPrincipalKey(t => t.TenantId);
             });
 
             modelBuilder.Entity<ManagementCompany>(builder =>
@@ -37,7 +41,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
                 builder.Property(mc => mc.Name).HasMaxLength(64);
                 builder.HasMany(mc => mc.Buildings)
                     .WithOne()
-                    .HasForeignKey(b => b.ManagementCompanyId)
+                    .HasForeignKey(mc => mc.ManagementCompanyId)
                     .HasPrincipalKey(mc => mc.ManagementCompanyId);
             });
 
@@ -63,7 +67,38 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration
             modelBuilder.Entity<AnnouncementTenant>(builder =>
             {
                 builder.ToTable("AnnouncementTenant");
-                builder.HasKey(at => new { at.TenatId, at.AnnouncementId });
+                builder.HasKey(at => new { at.TenantId, at.AnnouncementId });
+            });
+
+            modelBuilder.Entity<AnswerOption>(builder =>
+            {
+                builder.ToTable("AnswerOption");
+                builder.HasKey(a => a.AnswerOptionId);
+                builder.HasKey(a => a.PollId);
+                builder.Property(a => a.Answer);
+                builder.Property(a => a.VotersNumber);
+            });
+
+            modelBuilder.Entity<Poll>(builder =>
+            {
+                builder.ToTable("Poll");
+                builder.HasKey(a => a.PollId);
+                builder.Property(a => a.Question).HasMaxLength(64);
+                builder.HasMany(a => a.AnswerOption)
+                    .WithOne()
+                    .HasForeignKey(pt => pt.PollId)
+                    .HasPrincipalKey(a => a.PollId);
+                builder.HasKey(a => a.OwnerId);
+                builder.HasMany(a => a.PollTenat)
+                   .WithOne()
+                   .HasForeignKey(pt => pt.PollId)
+                   .HasPrincipalKey(a => a.PollId);
+            });
+
+            modelBuilder.Entity<PollTenant>(builder =>
+            {
+                builder.ToTable("PollTenant");
+                builder.HasKey(at => new { at.TenantId, at.PollId });
             });
         }
     }

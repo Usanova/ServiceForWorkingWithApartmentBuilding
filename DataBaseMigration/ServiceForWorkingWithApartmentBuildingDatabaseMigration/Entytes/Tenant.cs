@@ -5,7 +5,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
 {
     public sealed class Tenant
     {
-        public Guid TenatId { get; private set; }
+        public Guid TenantId { get; private set; }
 
         public string Name { get; private set; }
 
@@ -24,5 +24,7 @@ namespace ServiceForWorkingWithApartmentBuildingDatabaseMigration.Entytes
         public byte[] Avatar { get; private set; }
 
         public ICollection<AnnouncementTenant> AnnouncementTenant { get; private set; }
+
+        public ICollection<PollTenant> PollTenant { get; private set; }
     }
 }
