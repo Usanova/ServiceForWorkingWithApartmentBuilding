@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+
+    <RelativeLayout
+        android:id="@+id/message_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="150dp"
+        android:background="@drawable/chat_item_background"
+        android:minWidth="100dp">
+
+        <TextView
+            android:id="@+id/sender_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="2dp"
+            android:text="Mr. sender"
+            android:textSize="6pt"
+            android:fontFamily="serif"
+            android:textColor="@android:color/holo_red_dark"
+            android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"/>
+
+        <TextView
+            android:id="@+id/item_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sender_nickname"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:text="Ok"
+            android:textColor="@android:color/white"
+            android:textSize="8pt"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/message_timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="2dp"
+        android:text="17/01/19 15:00"
+        android:textSize="5pt"
+        android:layout_alignRight="@id/message_container"
+        android:layout_alignParentBottom="true"
+        android:textColor="#7777AA"/>
+
+</RelativeLayout>
