@@ -1,20 +1,20 @@
 ﻿ServiceForWorkingWithApartmentBuildingClient
-1.0.0.0
+
 
 winexe
 C#
 .cs
-E:\хакатон\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
+C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
 ServiceForWorkingWithApartmentBuildingClient
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-E:\хакатон\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
+C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
 3-75142315
 
-211394137914
-202347852756
+25-806760319
+1991942032908
 MainWindow.xaml;ManagementCompanyAuthorizationWindow.xaml;RegistrationTenantWindow.xaml;
 
-True
+False
 

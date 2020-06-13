@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceForWorkingWithApartmentBuildingClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="600" ResizeMode="NoResize" Background="#AB80AB"
+        Title="MainWindow" Height="400" Width="600" ResizeMode="NoResize" Background="#AB80AB"
         WindowStartupLocation="CenterScreen">
     <StackPanel>
         <TextBlock x:Name="tbOpenManagementCompanyWindow" Margin="0,0,5,0" HorizontalAlignment="Right" FontSize="11" Foreground="#F4FFEBFF" TextDecorations="Underline"
@@ -14,6 +14,10 @@
         <StackPanel Orientation="Horizontal" Margin="0,30,0,0" HorizontalAlignment="Center" >
             <Label Foreground="AliceBlue" FontSize="14" Width="70" >Имя:</Label>
             <TextBox x:Name="tblogin" Width="250" Height="23" KeyDown="Tblogin_KeyDown" ></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,30,0,0" HorizontalAlignment="Center" >
+            <Label Foreground="AliceBlue" FontSize="14" Width="70" >Фамилия:</Label>
+            <TextBox x:Name="tbSurname" Width="250" Height="23" KeyDown="Tblogin_KeyDown" ></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center" >
             <Label Foreground="AliceBlue" FontSize="14" Width="70">Пароль:</Label>

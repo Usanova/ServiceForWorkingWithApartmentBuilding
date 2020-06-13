@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Http;
+using ServiceForWorkingWithApartmentBuildingClient.Models;
 
 namespace ServiceForWorkingWithApartmentBuildingClient
 {
@@ -80,12 +81,30 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             RegistrationTenantWindow registration = new RegistrationTenantWindow();
             registration.Owner = this;
             //this.Hide();
-            registration.ShowDialog();
+            registration.ShowRegistrationTenantWindow();
         }
 
-        private void btnAuthentification_Click(object sender, RoutedEventArgs e)
+        private async void btnAuthentification_Click(object sender, RoutedEventArgs e)
         {
+            string hashPassword = SHA256Realization.ComputeSha256Hash(psbPass.Password);
+            var binding = new LoginTenatBinding()
+            {
+                Name = tblogin.Text,
+                Surname = tbSurname.Text,
+                Password = hashPassword
+            };
 
+            bool isnAuthentificait = await Server.Login(binding);
+
+            if (!isnAuthentificait)
+            {
+                MessageBox.Show("Неверное имя-фамилия пользователя или пароль!");
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

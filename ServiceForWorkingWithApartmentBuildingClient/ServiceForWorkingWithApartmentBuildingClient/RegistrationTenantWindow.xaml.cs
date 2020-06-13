@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ServiceForWorkingWithApartmentBuildingClient.Models;
+using System;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,6 +23,20 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         public RegistrationTenantWindow()
         {
             InitializeComponent();
+        }
+
+        public async void ShowRegistrationTenantWindow()
+        {
+            await LoadAddress();
+            this.Show();
+        }
+
+        private async Task LoadAddress()
+        {
+            var addresses = await Server.GetAllAddresses();
+
+            foreach (var address in addresses)
+                cmbAddress.Items.Add(new ComboBoxItem { Content = address });
         }
 
         private void tbName_KeyDown(object sender, KeyEventArgs e)
@@ -59,14 +76,41 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 psbNewPassword.Focus();
         }
 
-        private void btnSaveNewTenant_Click(object sender, RoutedEventArgs e)
+        private void btnDownloadAvatar_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnDownloadAvatar_Click(object sender, RoutedEventArgs e)
+        private async void btnSaveNewTenant_Click(object sender, RoutedEventArgs e)
         {
+            var cmi = (ComboBoxItem)cmbAddress.SelectedItem;
+            if (cmi.Content == null)
+                return;
 
+            string hashPassword = SHA256Realization.ComputeSha256Hash(psbNewPassword.Password);
+
+            var NewTenant = new CreateTenantBinding()
+            {
+                Name = tbName.Text,
+                Surname = tbSurname.Text,
+                DateOfBirth = tbBirthDate.DisplayDate,
+                Address = cmi.Content.ToString(),
+                EntranceNumber = int.Parse(tbEntranceNumber.Text),
+                FlatNumber = int.Parse(tbFlatNumber.Text),
+                Password = hashPassword
+            };
+
+            bool isRegistrated = await Server.Register(NewTenant);
+
+            if (!isRegistrated)
+            {
+                MessageBox.Show("Жилец с такими именем и паролем уже зарегистрирован!");
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

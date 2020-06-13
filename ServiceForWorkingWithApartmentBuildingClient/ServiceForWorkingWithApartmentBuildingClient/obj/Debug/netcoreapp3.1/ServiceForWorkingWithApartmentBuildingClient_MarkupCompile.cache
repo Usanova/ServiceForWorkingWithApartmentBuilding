@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\хакатон\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
-ServiceForWorkingWithApartmentBuildingClient_vnvzl5m4_wpftmp
+C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
+ServiceForWorkingWithApartmentBuildingClient
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-E:\хакатон\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
+C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
 3-75142315
 
-231620766124
-193-1985044158
+241357617866
+1991942032908
 MainWindow.xaml;ManagementCompanyAuthorizationWindow.xaml;RegistrationTenantWindow.xaml;
 
-True
+False
 
