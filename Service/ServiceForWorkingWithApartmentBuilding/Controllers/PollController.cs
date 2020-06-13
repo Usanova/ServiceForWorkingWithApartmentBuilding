@@ -16,7 +16,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
         [HttpPost("/polls/buildings/{buildingId}")]
         public async Task<IActionResult> CreatePollByBuildingId(CancellationToken cancellationToken,
         [FromRoute] Guid buildingId,
-        [System.Web.Http.FromBody] CreatePollBinding binding,
+        [FromBody] CreatePollBinding binding,
         [FromServices] PollManager mananger)
         {
             await mananger.CreateByBuilding(binding.Question, binding.Answers, binding.OwnerId, 

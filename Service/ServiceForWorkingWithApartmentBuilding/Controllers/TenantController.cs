@@ -33,7 +33,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
         [HttpPost("/Register")]
         public async Task<IActionResult> Register(CancellationToken cancellationToken, 
-           [System.Web.Http.FromBody] CreateTenantBinding binding,
+           [FromBody] CreateTenantBinding binding,
            [FromServices] TenantManager manager,
            [FromServices] ITenantRepository repository)
         {

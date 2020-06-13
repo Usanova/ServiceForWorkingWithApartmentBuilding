@@ -82,5 +82,10 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             //this.Hide();
             registration.ShowDialog();
         }
+
+        private void btnAuthentification_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

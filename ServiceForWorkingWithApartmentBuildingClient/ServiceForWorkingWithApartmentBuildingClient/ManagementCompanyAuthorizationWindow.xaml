@@ -24,7 +24,7 @@
                             <PasswordBox x:Name="psbPass" Width="280" Height="23" KeyDown="psbPass_KeyDown" MaxLength="64"></PasswordBox>
                         </StackPanel>
                         <Label x:Name="lblErrorAuthentification" Margin="125,0,0,0" Height="25" Foreground="AntiqueWhite" FontSize="10"></Label>
-                        <Button x:Name="btnAuthentification" Width="60" Height="25" Margin="0,15,0,0" >Ок</Button>
+                        <Button x:Name="btnAuthentification" Width="60" Height="25" Margin="0,15,0,0" Click="btnAuthentification_Click" >Ок</Button>
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>
@@ -36,7 +36,7 @@
 
                         <StackPanel Orientation="Horizontal"  Focusable="True" HorizontalAlignment="Left">
                             <Image x:Name="imgAvatar" Width="50" Height="50" Stretch="Fill" Margin="230,0,0,0" ></Image>
-                            <Button x:Name="btnDownloadAvatar" Width="130" Height="25" Margin="110,0,0,0">Загрузить фото</Button>
+                            <Button x:Name="btnDownloadAvatar" Width="130" Height="25" Margin="110,0,0,0" Click="btnDownloadAvatar_Click">Загрузить фото</Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="True" Margin="0,20,0,0">
                             <Label Width="110" Margin="0,0,10,0" Foreground="AliceBlue" FontSize="14">Название:</Label>
@@ -51,7 +51,7 @@
                             <Label Width="110" Margin="0,0,10,0" Foreground="AliceBlue" FontSize="14">Пароль:</Label>
                             <PasswordBox x:Name="psbRegistrationPass" Width="280" Height="23" KeyDown="psbRegistrationPass_KeyDown" MaxLength="64"></PasswordBox>
                         </StackPanel>
-                        <Button x:Name="btnRegister" Width="60" Height="25" Margin="0,25,0,0" >Ок</Button>
+                        <Button x:Name="btnRegister" Width="60" Height="25" Margin="0,25,0,0" Click="btnRegister_Click" >Ок</Button>
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>

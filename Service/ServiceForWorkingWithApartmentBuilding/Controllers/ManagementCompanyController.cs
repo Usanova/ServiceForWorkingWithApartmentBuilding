@@ -35,7 +35,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
         [HttpPost("/RegisterManagementCompany")]
         public async Task<IActionResult> RegisterManagementCompany(CancellationToken cancellationToken,
-           [System.Web.Http.FromBody] CreateManagementCompanyBinding binding,
+           [FromBody] CreateManagementCompanyBinding binding,
            [FromServices] IManagementCompanyRepository repository)
         {
             var managementCompany = await repository.Get(binding.Name, cancellationToken);

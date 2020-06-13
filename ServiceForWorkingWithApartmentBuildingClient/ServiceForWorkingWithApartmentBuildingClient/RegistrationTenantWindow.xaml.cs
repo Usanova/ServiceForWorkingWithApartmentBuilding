@@ -63,5 +63,10 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         {
 
         }
+
+        private void btnDownloadAvatar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -46,5 +46,20 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         {
             if (e.Key == Key.Enter) btnRegister.Focus();
         }
+
+        private void btnAuthentification_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDownloadAvatar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

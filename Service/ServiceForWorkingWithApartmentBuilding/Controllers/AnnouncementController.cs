@@ -13,7 +13,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
         [HttpPost("/announcement/buildings/{buildingId}")]
         public async Task<IActionResult> CreateAnnouncementByBuildingId(CancellationToken cancellationToken,
             [FromRoute] Guid buildingId,
-            [System.Web.Http.FromBody] CreateAnnouncementBinding binding,
+            [FromBody] CreateAnnouncementBinding binding,
             [FromServices] AnnouncementManager mananger)
         {
             await mananger.CreateByBuilding(binding.Title, binding.Content, buildingId, cancellationToken);

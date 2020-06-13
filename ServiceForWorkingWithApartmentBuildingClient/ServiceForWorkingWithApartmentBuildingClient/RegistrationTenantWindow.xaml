@@ -11,7 +11,7 @@
 
         <StackPanel Orientation="Horizontal"  Focusable="True">
             <Image x:Name="imgAvatar" Width="40" Height="40" Stretch="Fill" Margin="140,0,0,0"></Image>
-            <Button x:Name="btnDownloadAvatar" Width="130" Height="25" Margin="125,0,0,0">Загрузить фото</Button>
+            <Button x:Name="btnDownloadAvatar" Width="130" Height="25" Margin="125,0,0,0" Click="btnDownloadAvatar_Click">Загрузить фото</Button>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="True" Margin="0,10,0,0">
             <Label Width="120" Margin="0,0,10,0" Foreground="AliceBlue">Имя:</Label>

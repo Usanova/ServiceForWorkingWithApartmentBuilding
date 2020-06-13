@@ -21,7 +21,7 @@
         </StackPanel>
         <Label x:Name="lblErrorAuthentification" Margin="125,0,0,0" Height="25" Foreground="AntiqueWhite" FontSize="10"></Label>
         <!--<Label x:Name="lblLockTimer" Foreground="AntiqueWhite" FontSize="10" HorizontalAlignment="Center" ></Label>-->
-        <Button x:Name="btnAuthentification" Width="60" Height="25" Margin="0,15,0,0" >Ок</Button>
+        <Button x:Name="btnAuthentification" Width="60" Height="25" Margin="0,15,0,0" Click="btnAuthentification_Click" >Ок</Button>
         <Label x:Name="lblOpenRegistration" Foreground="AntiqueWhite" HorizontalAlignment="Center" MouseEnter="lblOpenRegistration_MouseEnter" MouseLeave="lblOpenRegistration_MouseLeave" MouseDown="lblOpenRegistration_MouseDown">
             Регистрация</Label>
     </StackPanel>
