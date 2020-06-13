@@ -87,6 +87,15 @@ namespace ServiceForWorkingWithApartmentBuilding
 
             #endregion
 
+            #region ManagementCompany
+
+            services.AddNpgsqlDbContext<Infrastructure.ManagementCompanies.ManagementCompanyDbContext>(connectionString);
+
+            services.AddScoped<Domain.ManagementCompanies.IManagementCompanyRepository, Infrastructure.ManagementCompanies.ManagementCompanyRepository>();
+            services.AddScoped<Infrastructure.ManagementCompanies.Query.GetManagementCompanyProfileView>();
+
+            #endregion
+
             services.AddSwagger();
 
             //services.AddAuthentication()
