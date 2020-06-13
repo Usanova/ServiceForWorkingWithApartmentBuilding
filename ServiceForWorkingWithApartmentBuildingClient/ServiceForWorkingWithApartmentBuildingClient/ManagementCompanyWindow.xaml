@@ -1,0 +1,133 @@
+﻿<Window x:Class="ServiceForWorkingWithApartmentBuildingClient.ManagementCompanyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceForWorkingWithApartmentBuildingClient"
+        mc:Ignorable="d"
+        Title="ManagementCompanyWindow" Height="650" Width="900" Background="#2b8f8f">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Image Width="50" Height="50" HorizontalAlignment="Left" Margin="20,10,30,10"
+               Grid.Row="0" ></Image>
+            <StackPanel Margin="40,5,0,0">
+                <TextBlock x:Name="lblName" Foreground="White" Height="23">CompanyName</TextBlock>
+                <TextBlock x:Name="lblInfo" TextWrapping="Wrap"  Foreground="White">CompanyInformation</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <TabControl TabStripPlacement="Left">
+            <TabItem>
+                <TabItem.Header>
+                    <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Собрание</Label>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Height="550">
+
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Опросы</Label>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid Height="550">
+                        <ScrollViewer CanContentScroll="False">
+                            <StackPanel Width="720" Margin="0,20,0,0" >
+                                <Label Width="130" Margin="0,10,0,10" HorizontalContentAlignment="Center">Опросы</Label>
+                                <StackPanel x:Name="stpPolls" Width="720"  Margin="0,10,0,0">
+                                    <StackPanel x:Name="stpPool0"  Background="#7BCCBE">
+                                        <StackPanel x:Name="stpGetPoll0" Orientation="Horizontal" Margin="0,10,0,0">
+                                            <TextBlock x:Name="tblNameOfPool0"  TextWrapping="Wrap" Margin="10,0,10,0" Width="660">fsdf</TextBlock>
+                                            <Button x:Name="btnGetPoll0" Width="23" Height="23" Background="#7BCCBE">v</Button>
+                                        </StackPanel>
+
+                                        <Grid x:Name="grAnswerOptionsOfPool0" Width="700" Height="200" Background="White" Margin="0,10,0,10"></Grid>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Создать опрос</Label>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid Height="550">
+                        <ScrollViewer CanContentScroll="False">
+                            <StackPanel Width="720"  Margin="0,20,0,0" Background="#7BCCBE" >
+                                <Label Width="130" Margin="0,10,0,0" HorizontalContentAlignment="Center">Создать опрос</Label>
+                                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                                    <Label  Margin="10,0,0,0" Width="85" >Для дома:</Label>
+                                    <ComboBox x:Name="cmbBuildingAddressesForCreaatePoll" Width="610" Height="23"></ComboBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                                    <Label  Margin="10,0,0,0" Width="85" >Вопрос:</Label>
+                                    <TextBox x:Name="tbPollQuestionForCreatePoll" Width="610" Height="23" MaxLength="1024"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,15">
+                                    <Button x:Name="btnDelAnswerOption" Height="30" Width="30" Click="btnDelAnswerOption_Click">-</Button>
+                                    <Label  Width="135" HorizontalContentAlignment="Center" HorizontalAlignment="Left" >Варианты ответов</Label>
+                                    <Button x:Name="btnAddAnswerOption" Height="30" Width="30" Click="btnNewAnswerOption_Click">+</Button>
+                                </StackPanel>
+                                <StackPanel x:Name="stpAnswerOptions">
+                                    <TextBox x:Name="answer0" Width="690" Height="25" MaxLength="1024"></TextBox>
+                                </StackPanel>
+                                <Button x:Name="btnCreatePoll" Width="100" Margin="0,20,0,0" Click="btnCreatePoll_Click">Создать</Button>
+                                <Label x:Name="lblCreatePollState" HorizontalAlignment="Center" Height="25" Foreground="White"
+                                       FontSize="10" Margin="0,0,0,40">RequestState</Label>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Создать объявление</Label>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Height="550">
+                        <StackPanel Width="720" Height="510" Margin="0,20,0,0" Background="#7BCCBE">
+                            <Label Width="130" Margin="0,10,0,0" HorizontalContentAlignment="Center">Создать объявление</Label>
+                            <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                                <Label  Margin="10,0,0,0" Width="85" >Для дома:</Label>
+                                <ComboBox x:Name="cmbBuildingAddressesForCreateAnnouncement" Width="610" Height="23"></ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                                <Label  Margin="10,0,0,0" Width="85" >Заголовок:</Label>
+                                <TextBox x:Name="tbAnnouncementTitleForCreateAnnouncement" Width="610" Height="23" MaxLength="1024"></TextBox>
+                            </StackPanel>
+                            <Label Margin="10,15,0,5" Width="85" HorizontalAlignment="Left" >Содержание:</Label>
+                            <TextBox x:Name="tbAnnouncementContentForCreateAnnouncement" Width="690" Height="260" 
+                                     TextWrapping="Wrap" MaxLength="1024" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"></TextBox>
+                            <Button x:Name="btnCreateNewAnnouncement" Width="100" Margin="0,20,0,0">Создать</Button>
+                            <Label x:Name="lblCreateAnnouncementState" HorizontalAlignment="Center" Height="25" Foreground="White" FontSize="10">RequestState</Label>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Добавить дом</Label>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Height="550">
+                        <StackPanel Width="720" Height="120" Margin="0,20,0,0" Background="#7BCCBE">
+                            <Label   Width="90" Margin="0,10,0,0">Добавить дом</Label>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center" >
+                                <Label   Width="60" >Адрес:</Label>
+                                <TextBox x:Name="tbBuildingAddressForCreateBuildin" Width="500" Height="23"></TextBox>
+                                <Button x:Name="btnCreateBuilding" Width="100" Margin="15,0,0,0">Добавить</Button>
+                            </StackPanel>
+                            <Label x:Name="lblCreateBuildingState" Margin="90,0,0,0" Height="25" Foreground="White" FontSize="10">RequestState</Label>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+
+        </TabControl>
+    </StackPanel>
+</Window>

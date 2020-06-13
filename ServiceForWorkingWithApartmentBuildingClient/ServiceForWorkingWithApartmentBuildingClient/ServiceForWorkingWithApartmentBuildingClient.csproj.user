@@ -10,6 +10,9 @@
     <Compile Update="ManagementCompanyAuthorizationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ManagementCompanyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RegistrationTenantWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ManagementCompanyAuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ManagementCompanyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegistrationTenantWindow.xaml">
