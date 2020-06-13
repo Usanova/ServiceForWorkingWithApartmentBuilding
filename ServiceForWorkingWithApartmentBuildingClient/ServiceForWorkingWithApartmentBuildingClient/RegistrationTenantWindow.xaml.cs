@@ -82,13 +82,81 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         }
 
         private async void btnSaveNewTenant_Click(object sender, RoutedEventArgs e)
-        {
-            var cmi = (ComboBoxItem)cmbAddress.SelectedItem;
-            if (cmi.Content == null)
+        {      
+            lbErrorMessage.Content = String.Empty;
+
+            if (String.IsNullOrEmpty(tbName.Text))
+            {
+                lbErrorMessage.Content = "Введите имя!";
                 return;
+            }
+
+            else if (String.IsNullOrEmpty(tbSurname.Text))
+            {
+                lbErrorMessage.Content = "Введите фамилию!";
+                return;
+            }
+
+            else if (!(tbBirthDate.SelectedDate < DateTime.Today))
+            {
+                lbErrorMessage.Content = "Выберите дату рождения!";
+                return;
+            }
+
+            else if (cmbAddress.SelectedItem == null)
+            {
+                lbErrorMessage.Content = "Укажите адрес!";
+                return;
+            }
+
+            else if (String.IsNullOrEmpty(tbEntranceNumber.Text))
+            {
+                lbErrorMessage.Content = "Укажите подъезд!";
+                return;
+            }
+
+            else if (FieldsValidation.NumberCheck(tbEntranceNumber.Text) == null)
+            {
+                lbErrorMessage.Content = "Укажите корректный подъезд!";
+                return;
+            }
+
+            else if (String.IsNullOrEmpty(tbFlatNumber.Text))
+            {
+                lbErrorMessage.Content = "Укажите квартиру!";
+                return;
+            }
+
+            else if (FieldsValidation.NumberCheck(tbFlatNumber.Text) == null)
+            {
+                lbErrorMessage.Content = "Укажите корректный подъезд!";
+                return;
+            }
+
+            else if (FieldsValidation.PasswordCheck(psbNewPassword.Password) == null)
+            {
+                lbErrorMessage.Content = "Введите корректный пароль!\n" +
+                    "Он должен содержать хотя бы одну цифру, однин символ нижнего (A-Z) и верхнего регистров (a-z).\n" +
+                    "Минимальная длина равна 8.";
+                return;
+            }
+
+            else if (FieldsValidation.PasswordCheck(psbRepeatPassword.Password) == null)
+            {
+                lbErrorMessage.Content = "Повторите корректный пароль!";
+                return;
+            }
+
+            else if (psbNewPassword.Password != psbRepeatPassword.Password)
+            {
+                lbErrorMessage.Content = "Пароли не совпадают!";
+                return;
+            }
+
+            var cmi = (ComboBoxItem)cmbAddress.SelectedItem;
 
             string hashPassword = SHA256Realization.ComputeSha256Hash(psbNewPassword.Password);
-
+                       
             var NewTenant = new CreateTenantBinding()
             {
                 Name = tbName.Text,

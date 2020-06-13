@@ -49,6 +49,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 btnAuthentification.Focus();
             }
         }
+
         private void tbOpenManagementCompanyWindow_MouseEnter(object sender, MouseEventArgs e)
         {
             tbOpenManagementCompanyWindow.Foreground = Brushes.Thistle;

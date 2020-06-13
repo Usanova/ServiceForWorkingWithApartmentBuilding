@@ -39,15 +39,20 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         {
             if (e.Key == Key.Enter) tbRegistrationInfo.Focus();
         }
+         
+        private void psbRegistrationPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) btnRegister.Focus();
+        }
+
+        private void psbRegistrationRepeatPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) btnRegister.Focus();
+        }
 
         private void tbRegistrationInfo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter) psbRegistrationPass.Focus();
-        }
-
-        private void psbRegistrationPass_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter) btnRegister.Focus();
         }
 
         private async void btnAuthentification_Click(object sender, RoutedEventArgs e)
@@ -79,6 +84,39 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
         private async void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            lbErrorMessage.Content = String.Empty;
+
+            if (String.IsNullOrEmpty(tbRegistrationName.Text))
+            {
+                lbErrorMessage.Content = "Введите имя!";
+                return;
+            }
+               
+            else if (FieldsValidation.PasswordCheck(psbRegistrationPass.Password) == null)
+            {
+                lbErrorMessage.Content = "Введите корректный пароль!\n" +
+                    "Он должен содержать хотя бы одну цифру, однин символ нижнего (A-Z) и верхнего регистров (a-z).\n" +
+                    "Минимальная длина равна 8.";
+                return;
+            }
+
+            else if (FieldsValidation.PasswordCheck(psbRegistrationRepeatPass.Password) == null)
+            {
+                lbErrorMessage.Content = "Повторите корректный пароль!";
+                return;
+            }
+
+            else if (psbRegistrationPass.Password != psbRegistrationRepeatPass.Password)
+            {
+                lbErrorMessage.Content = "Пароли не совпадают!";
+                return;
+            }
+
+            if (String.IsNullOrEmpty(tbRegistrationInfo.Text))
+            {
+                lbErrorMessage.Content = "Введите информацию!";
+                return;
+            }
 
             string hashPassword = SHA256Realization.ComputeSha256Hash(psbRegistrationPass.Password);
 
