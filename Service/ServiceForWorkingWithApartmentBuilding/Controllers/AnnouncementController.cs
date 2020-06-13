@@ -22,7 +22,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
         }
 
 
-        [HttpGet("/announcement/buildings/{tenatId}")]
+        [HttpGet("/announcement/tenants/{tenatId}")]
         public async Task<IActionResult> GetAnnouncementsForTenant(CancellationToken cancellationToken,
             [FromRoute] Guid tenantId,
             [FromServices] GetListAnnouncement getListAnnouncement,

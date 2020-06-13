@@ -18,13 +18,15 @@ namespace Domain.Meetings
             this.buildingService = buildingService;
         }
 
-        public async Task OpenForBuilding(string name, Guid ownerId, Guid buildingId, CancellationToken cancellationToken)
+        public async Task<Guid> OpenForBuilding(string name, Guid ownerId, Guid buildingId, CancellationToken cancellationToken)
         {
             var meeting = new Meeting(name, ownerId);
 
             await buildingService.SetMeetId(meeting.GetId().ToString(), buildingId, cancellationToken);
 
             await repository.Save(meeting, cancellationToken);
+
+            return meeting.MeetingId;
         }
 
         public async Task Close(Guid meetingId, CancellationToken cancellationToken)

@@ -33,3 +33,4 @@ E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debu
 E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.dll
 E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache

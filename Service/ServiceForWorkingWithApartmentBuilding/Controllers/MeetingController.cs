@@ -15,9 +15,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             [FromBody] CreateMeetingBinding binding,
             [FromServices] MeetingManager manager)
         {
-            await manager.OpenForBuilding(binding.Name, binding.OwnerId, buildingId, cancellationToken);
-            
-            return Ok();
+            return Ok(await manager.OpenForBuilding(binding.Name, binding.OwnerId, buildingId, cancellationToken));
         }
 
         [HttpDelete("/meetings/buindings/{meetingId}")]

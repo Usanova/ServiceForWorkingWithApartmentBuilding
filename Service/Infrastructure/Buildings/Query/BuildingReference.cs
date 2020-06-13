@@ -6,7 +6,7 @@ namespace Infrastructure.Buildings.Query
 {
     public sealed class BuildingReference
     {
-        public Guid ManagementCompanyId { get; set; }
+        public Guid BuildingId { get; set; }
 
         public string Address { get; set; }
     }

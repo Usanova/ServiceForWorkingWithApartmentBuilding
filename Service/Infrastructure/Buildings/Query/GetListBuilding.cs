@@ -22,7 +22,7 @@ namespace Infrastructure.Buildings.Query
             return (await repository.GetBuildingsByManagementCompanyId(managementCompanyId, cancellationToken))
                 .Select(b => new BuildingReference()
                 {
-                    ManagementCompanyId = b.ManagementCompanyId,
+                    BuildingId = b.BuildingId,
                     Address = b.Address
                 });
         }
