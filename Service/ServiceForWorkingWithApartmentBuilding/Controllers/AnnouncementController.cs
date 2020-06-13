@@ -10,7 +10,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 {
     public class AnnouncementController : Controller
     {
-        [HttpPost("/Announcement/{buildingId}")]
+        [HttpPost("/announcement/buildings/{buildingId}")]
         public async Task<IActionResult> CreateAnnouncementByBuildingId(CancellationToken cancellationToken,
             [FromRoute] Guid buildingId,
             [System.Web.Http.FromBody] CreateAnnouncementBinding binding,
@@ -22,8 +22,8 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
         }
 
 
-        [HttpGet("/Announcement/{tenatId}")]
-        public async Task<IActionResult> GetAnnouncements(CancellationToken cancellationToken,
+        [HttpGet("/announcement/buildings/{tenatId}")]
+        public async Task<IActionResult> GetAnnouncementsForTenant(CancellationToken cancellationToken,
             [FromRoute] Guid tenantId,
             [FromServices] GetListAnnouncement getListAnnouncement,
             [FromQuery] int? offset = 0,

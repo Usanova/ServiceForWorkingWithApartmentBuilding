@@ -8,13 +8,13 @@ namespace Domain.Meetings
 {
     public sealed class MeetingManager
     {
-        private readonly IMeetingRepository meetingRepository;
+        private readonly IMeetingRepository repository;
 
         private readonly IBuildingService buildingService;
 
         public MeetingManager(IMeetingRepository meetingRepository, IBuildingService buildingService)
         {
-            this.meetingRepository = meetingRepository;
+            this.repository = meetingRepository;
             this.buildingService = buildingService;
         }
 
@@ -24,11 +24,16 @@ namespace Domain.Meetings
 
             await buildingService.SetMeetId(meeting.GetId().ToString(), buildingId, cancellationToken);
 
-            await meetingRepository.Save(meeting, cancellationToken);
+            await repository.Save(meeting, cancellationToken);
         }
 
         public async Task Close(Guid meetingId, CancellationToken cancellationToken)
         {
+            var meeting = await repository.Get(meetingId, cancellationToken);
+            meeting.Close();
+
+            await repository.Save(meeting, cancellationToken);
+
             await buildingService.RemoveMeetId(meetingId, cancellationToken);
         }
     }

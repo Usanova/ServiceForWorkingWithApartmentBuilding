@@ -20,5 +20,10 @@ namespace Domain.Meetings
         public Guid OwnerId { get; private set; }
 
         public Guid GetId() => MeetingId;
+
+        public void Close()
+        {
+            OwnerId = Guid.NewGuid();
+        }
     }
 }

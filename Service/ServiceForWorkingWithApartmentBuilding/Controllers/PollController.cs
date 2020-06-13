@@ -13,7 +13,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 {
     public class PollController: Controller
     {
-        [HttpPost("/polls/{buildingId}")]
+        [HttpPost("/polls/buildings/{buildingId}")]
         public async Task<IActionResult> CreatePollByBuildingId(CancellationToken cancellationToken,
         [FromRoute] Guid buildingId,
         [System.Web.Http.FromBody] CreatePollBinding binding,
@@ -41,7 +41,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             return Ok(await getListPollForManagementCompany.Handler(managementCompanyId, cancellationToken));
         }
 
-        [HttpGet("/polls/{pollId}")]
+        [HttpGet("/polls/answers/{pollId}")]
         public async Task<IActionResult> GetAnswerOption(CancellationToken cancellationToken,
             [FromRoute] Guid pollId,
             [FromServices] GetListAnswerOption getListAnswerOption)

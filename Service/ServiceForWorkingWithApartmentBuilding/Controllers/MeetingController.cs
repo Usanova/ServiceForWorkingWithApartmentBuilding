@@ -9,7 +9,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 {
     public sealed class MeetingController : Controller
     {
-        [HttpPost("/meetings/{buildingId}")]
+        [HttpPost("/meetings/buindings/{buildingId}")]
         public async Task<ActionResult> OpenMeetingForBuilding(CancellationToken cancellationToken, 
             [FromRoute] Guid buildingId,
             [FromBody] CreateMeetingBinding binding,
@@ -20,8 +20,8 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             return Ok();
         }
 
-        [HttpDelete("/meetings/{meetingId}")]
-        public async Task<ActionResult> OpenMeetingForBuilding(CancellationToken cancellationToken,
+        [HttpDelete("/meetings/buindings/{meetingId}")]
+        public async Task<ActionResult> СдщыуMeetingForBuilding(CancellationToken cancellationToken,
             [FromRoute] Guid meetingId,
             [FromServices] MeetingManager manager)
         {

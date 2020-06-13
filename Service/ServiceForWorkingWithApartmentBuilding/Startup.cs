@@ -44,7 +44,8 @@ namespace ServiceForWorkingWithApartmentBuilding
             services.AddScoped<Domain.Tenats.ITenantRepository, Infrastructure.Tenats.TenantRepository>();
             services.AddScoped<Domain.Tenats.IBuildingService, Infrastructure.Tenats.BuildingService>();
             services.AddScoped<Domain.Tenats.TenantManager>();
-            services.AddScoped<Infrastructure.Tenats.Query.GetProfileView>();
+            services.AddScoped<Infrastructure.Tenats.Query.GetProfileViewByName>();
+            services.AddScoped<Infrastructure.Tenats.Query.GetProfileViewById>();
             services.AddScoped<Infrastructure.Tenats.Query.GetListAddress>();
 
             #endregion
@@ -84,6 +85,28 @@ namespace ServiceForWorkingWithApartmentBuilding
             services.AddScoped<Domain.Meetings.IMeetingRepository, Infrastructure.Meetings.MeetingRepository>();
             services.AddScoped<Domain.Meetings.MeetingManager>();
             services.AddScoped<Domain.Meetings.IBuildingService, Infrastructure.Meetings.BuildingService>();
+
+            #endregion
+
+            #region ManagementCompany
+
+            services.AddNpgsqlDbContext<Infrastructure.ManagementCompanies.ManagementCompanyDbContext>(connectionString);
+            services.AddNpgsqlDbContext<Infrastructure.ManagementCompanies.MeetingDbContext>(connectionString);
+
+            services.AddScoped<Domain.ManagementCompanies.IManagementCompanyRepository, Infrastructure.ManagementCompanies.ManagementCompanyRepository>();
+            services.AddScoped<Infrastructure.ManagementCompanies.Query.GetManagementCompanyProfileViewByName>();
+            services.AddScoped<Infrastructure.ManagementCompanies.Query.GetManagementCompanyProfileViewById>();
+            services.AddScoped<Domain.ManagementCompanies.IMeetingService, 
+                Infrastructure.ManagementCompanies.MeetingService>();
+
+            #endregion
+
+            #region Building
+
+            services.AddNpgsqlDbContext<Infrastructure.Buildings.BuildingDbContext>(connectionString);
+
+            services.AddScoped<Domain.Buildings.IBuildingRepository, Infrastructure.Buildings.BuildingRepository>();
+            services.AddScoped<Infrastructure.Buildings.Query.GetListBuilding>();
 
             #endregion
 

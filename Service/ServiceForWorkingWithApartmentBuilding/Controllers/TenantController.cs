@@ -111,9 +111,17 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
         public async Task<IActionResult> GetTenantProfile(CancellationToken cancellationToken,
         [FromRoute] string name,
         [FromRoute] string password,
-        [FromServices] GetProfileView getProfileView)
+        [FromServices] GetProfileViewByName getProfileViewByName)
         {
-            return Ok(await getProfileView.Handler(name, password, cancellationToken));
+            return Ok(await getProfileViewByName.Handler(name, password, cancellationToken));
+        }
+
+        [HttpGet("/tenants/profile/{tenantId}")]
+        public async Task<IActionResult> GetTenantProfile(CancellationToken cancellationToken,
+        [FromRoute] Guid tenantId,
+        [FromServices] GetProfileViewById getProfileViewById)
+        {
+            return Ok(await getProfileViewById.Handler(tenantId, cancellationToken));
         }
 
         [HttpDelete("/tenants/{tenantId}")]
