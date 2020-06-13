@@ -17,11 +17,10 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
     {
         [HttpPost("/Login")]
         public async Task<IActionResult> Login(CancellationToken cancellationToken, 
-            string userName,
-            string password,
+            [FromBody] LoginTenatBinding binding,
             [FromServices] ITenantRepository repository)
         {
-            var tenant = await repository.Get(userName, password, cancellationToken);
+            var tenant = await repository.Get(binding.Name, binding.Surname, binding.Password, cancellationToken);
             if (tenant == null)
             {
                 return BadRequest(new { errorText = "Invalid username or password." });

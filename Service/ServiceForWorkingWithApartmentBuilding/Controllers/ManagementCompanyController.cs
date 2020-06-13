@@ -19,11 +19,10 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
     {
         [HttpPost("/LoginManagementCompany")]
         public async Task<IActionResult> LoginManagementCompany(CancellationToken cancellationToken,
-            string companyName,
-            string password,
+            [FromBody] LoginManagementCompanyBinding binding,
             [FromServices] IManagementCompanyRepository repository)
         {
-            var managementCompany = await repository.Get(companyName, password, cancellationToken);
+            var managementCompany = await repository.Get(binding.NameCompany, binding.Password, cancellationToken);
             if (managementCompany == null)
             {
                 return BadRequest(new { errorText = "Invalid companyname or password." });
