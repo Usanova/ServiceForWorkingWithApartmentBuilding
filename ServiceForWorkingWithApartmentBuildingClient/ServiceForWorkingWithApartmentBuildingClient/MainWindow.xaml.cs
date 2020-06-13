@@ -34,5 +34,53 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             HttpResponseMessage response = await 
                 client.GetAsync("https://localhost:44303/announcement/tenants/611b8fa3-8906-43a9-af7c-d047f34a51ba");
         }
+
+        private void Tblogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                psbPass.Focus();
+        }
+
+        private void PsbPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnAuthentification.Focus();
+            }
+        }
+        private void tbOpenManagementCompanyWindow_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tbOpenManagementCompanyWindow.Foreground = Brushes.Thistle;
+        }
+
+        private void tbOpenManagementCompanyWindow_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tbOpenManagementCompanyWindow.Foreground = (Brush)new BrushConverter().ConvertFrom("#F4FFEBFF");
+        }
+
+        private void tbOpenManagementCompanyWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ManagementCompanyAuthorizationWindow managementCompanyAuthorizationWindow = new ManagementCompanyAuthorizationWindow();
+            managementCompanyAuthorizationWindow.Owner = this;
+            managementCompanyAuthorizationWindow.ShowDialog();
+        }
+
+        private void lblOpenRegistration_MouseEnter(object sender, MouseEventArgs e)
+        {
+            lblOpenRegistration.Foreground = Brushes.AliceBlue;
+        }
+
+        private void lblOpenRegistration_MouseLeave(object sender, MouseEventArgs e)
+        {
+            lblOpenRegistration.Foreground = Brushes.AntiqueWhite;
+        }
+
+        private void lblOpenRegistration_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            RegistrationTenantWindow registration = new RegistrationTenantWindow();
+            registration.Owner = this;
+            //this.Hide();
+            registration.ShowDialog();
+        }
     }
 }

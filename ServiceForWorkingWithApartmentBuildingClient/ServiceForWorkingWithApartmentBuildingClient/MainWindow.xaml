@@ -5,10 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceForWorkingWithApartmentBuildingClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Click="Button_Click">
-            
-        </Button>
-    </Grid>
+        Title="MainWindow" Height="350" Width="600" ResizeMode="NoResize" Background="#AB80AB"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <TextBlock x:Name="tbOpenManagementCompanyWindow" Margin="0,0,5,0" HorizontalAlignment="Right" FontSize="11" Foreground="#F4FFEBFF" TextDecorations="Underline"
+                   MouseEnter="tbOpenManagementCompanyWindow_MouseEnter" MouseLeave="tbOpenManagementCompanyWindow_MouseLeave" MouseDown="tbOpenManagementCompanyWindow_MouseDown">Мы управляющая компания</TextBlock>
+        <Label x:Name="lblName" HorizontalAlignment="Center" FontSize="20" Margin="0,30,0,0" Foreground="AliceBlue">Добрый день</Label>
+        <StackPanel Orientation="Horizontal" Margin="0,30,0,0" HorizontalAlignment="Center" >
+            <Label Foreground="AliceBlue" FontSize="14" Width="70" >Имя:</Label>
+            <TextBox x:Name="tblogin" Width="250" Height="23" KeyDown="Tblogin_KeyDown" ></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center" >
+            <Label Foreground="AliceBlue" FontSize="14" Width="70">Пароль:</Label>
+            <PasswordBox x:Name="psbPass" Width="250" Height="23" KeyDown="PsbPass_KeyDown" MaxLength="64"></PasswordBox>
+        </StackPanel>
+        <Label x:Name="lblErrorAuthentification" Margin="125,0,0,0" Height="25" Foreground="AntiqueWhite" FontSize="10"></Label>
+        <!--<Label x:Name="lblLockTimer" Foreground="AntiqueWhite" FontSize="10" HorizontalAlignment="Center" ></Label>-->
+        <Button x:Name="btnAuthentification" Width="60" Height="25" Margin="0,15,0,0" >Ок</Button>
+        <Label x:Name="lblOpenRegistration" Foreground="AntiqueWhite" HorizontalAlignment="Center" MouseEnter="lblOpenRegistration_MouseEnter" MouseLeave="lblOpenRegistration_MouseLeave" MouseDown="lblOpenRegistration_MouseDown">
+            Регистрация</Label>
+    </StackPanel>
 </Window>

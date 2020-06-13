@@ -1,0 +1,61 @@
+﻿<Window x:Class="ServiceForWorkingWithApartmentBuildingClient.ManagementCompanyAuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceForWorkingWithApartmentBuildingClient"
+        mc:Ignorable="d"
+        Title="ManagementCompanyAuthorizationWindow" Height="450" Width="800" 
+        WindowStartupLocation="CenterOwner"
+        Background="#837FA2">
+    <StackPanel>
+        <TabControl>
+            <TabItem Width="100">
+                <TabItem.Header>Вход</TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Background="#837FA2" Height="420">
+                        <Label x:Name="lblName" HorizontalAlignment="Center" FontSize="20" Margin="0,70,0,0" Foreground="AliceBlue">Добрый день</Label>
+                        <StackPanel Orientation="Horizontal" Margin="0,30,0,0" HorizontalAlignment="Center">
+                            <Label Foreground="AliceBlue" FontSize="14" Width="110" >Название:</Label>
+                            <TextBox x:Name="tbName" Width="280" Height="23" KeyDown="tbName_KeyDown"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center" >
+                            <Label Foreground="AliceBlue" FontSize="14" Width="110">Пароль:</Label>
+                            <PasswordBox x:Name="psbPass" Width="280" Height="23" KeyDown="psbPass_KeyDown" MaxLength="64"></PasswordBox>
+                        </StackPanel>
+                        <Label x:Name="lblErrorAuthentification" Margin="125,0,0,0" Height="25" Foreground="AntiqueWhite" FontSize="10"></Label>
+                        <Button x:Name="btnAuthentification" Width="60" Height="25" Margin="0,15,0,0" >Ок</Button>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Width="100">
+                <TabItem.Header>Регистрация</TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel Background="#837FA2" Height="420">
+                        <Label Margin="0,20,0,20" Foreground="AliceBlue" HorizontalAlignment="Center" FontSize="16">Регистрация</Label>
+
+                        <StackPanel Orientation="Horizontal"  Focusable="True" HorizontalAlignment="Left">
+                            <Image x:Name="imgAvatar" Width="50" Height="50" Stretch="Fill" Margin="230,0,0,0" ></Image>
+                            <Button x:Name="btnDownloadAvatar" Width="130" Height="25" Margin="110,0,0,0">Загрузить фото</Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="True" Margin="0,20,0,0">
+                            <Label Width="110" Margin="0,0,10,0" Foreground="AliceBlue" FontSize="14">Название:</Label>
+                            <TextBox x:Name="tbRegistrationName" Width="280" KeyDown="tbRegistrationName_KeyDown" Height="23"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="True" Margin="0,20,0,0">
+                            <Label Width="110" Margin="0,0,10,0" Foreground="AliceBlue" FontSize="14">Информация:</Label>
+                            <TextBox x:Name="tbRegistrationInfo" Width="280" MaxLength="1024" KeyDown="tbRegistrationInfo_KeyDown"
+                                     Height="23"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Focusable="True" Margin="0,20,0,0">
+                            <Label Width="110" Margin="0,0,10,0" Foreground="AliceBlue" FontSize="14">Пароль:</Label>
+                            <PasswordBox x:Name="psbRegistrationPass" Width="280" Height="23" KeyDown="psbRegistrationPass_KeyDown" MaxLength="64"></PasswordBox>
+                        </StackPanel>
+                        <Button x:Name="btnRegister" Width="60" Height="25" Margin="0,25,0,0" >Ок</Button>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+        
+    </StackPanel>
+</Window>
