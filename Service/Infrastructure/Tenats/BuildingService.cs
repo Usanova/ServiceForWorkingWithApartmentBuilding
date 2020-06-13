@@ -33,6 +33,7 @@ namespace Infrastructure.Tenats
         {
             return await context.Buildings
                 .Select(b => b.Address)
+                .Distinct()
                 .ToListAsync();
         }
 
