@@ -8,7 +8,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient.Models
     {
         public string Question { get; set; }
 
-        public Guid OwnerId { get; set; }
+        public string OwnerId { get; set; }
 
         public IEnumerable<string> Answers { get; set; }
     }

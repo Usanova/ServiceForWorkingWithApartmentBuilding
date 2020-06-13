@@ -7,6 +7,6 @@ namespace ServiceForWorkingWithApartmentBuildingClient.Models
     public class CreateMeetingBinding
     {
         public string Name { get; set; }
-        public Guid OwnerId { get; set; }
+        public string OwnerId { get; set; }
     }
 }

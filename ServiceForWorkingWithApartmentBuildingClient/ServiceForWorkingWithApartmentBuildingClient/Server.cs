@@ -89,5 +89,152 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             else
                 return false;
         }
+
+        public static async Task CreateAnnouncementByBuildingId(string buildingId, CreateAnnouncementBinding binding)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.PostAsJsonAsync($"https://localhost:44303/announcement/buildings/{buildingId}", binding);
+        }
+
+        public static async Task<List<AnnouncementReference>> GetAnnouncementsForTenant(string tenantId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.GetAsync($"https://localhost:44303/announcement/tenants/{tenantId}");
+
+            var announcements = JsonConvert.DeserializeObject<Page<AnnouncementReference>>(await response.Content.ReadAsStringAsync());
+
+            return announcements.Values.ToList();
+        }
+
+        public static async Task CreatePollByBuildingId(string buildingId, CreatePollBinding binding)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.PostAsJsonAsync($"https://localhost:44303/polls/buildings/{buildingId}", binding);
+        }
+
+        public static async Task<List<PollReference>> GetPollsFromManagementCompany(string managementCompanyId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.GetAsync($"https://localhost:44303/polls/managementCompany/{managementCompanyId}");
+
+            var polls = JsonConvert.DeserializeObject<IEnumerable<PollReference>>(await response.Content.ReadAsStringAsync());
+
+            return polls.ToList();
+        }
+
+        public static async Task<List<PollReference>> GetPollsForTeant(string tenantId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.GetAsync($"https://localhost:44303/polls/tenant/{tenantId}");
+
+            var polls = JsonConvert.DeserializeObject<IEnumerable<PollReference>>(await response.Content.ReadAsStringAsync());
+
+            return polls.ToList();
+        }
+
+        public static async Task<List<AnswerOptionReference>> GetAnswerOption(string pollId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.GetAsync($"https://localhost:44303/polls/answers/{pollId}");
+
+            var answers = JsonConvert.DeserializeObject<IEnumerable<AnswerOptionReference>>(await response.Content.ReadAsStringAsync());
+
+            return answers.ToList();
+        }
+
+        public static async Task ToVoke(string pollId, string answerOptionId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.PostAsJsonAsync($"https://localhost:44303/polls/{pollId}/answer/{answerOptionId}", new { });
+        }
+
+        public static async Task ClosePoll(string pollId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.DeleteAsync($"https://localhost:44303/polls/{pollId}");
+        }
+
+        public static async Task<bool> CreateBuildingByManagementCompanyId(string managementCompanyId, CreateBuildingBinding binding)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.PostAsJsonAsync($"https://localhost:44303/building/{managementCompanyId}", binding);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                return true;
+            else
+                return false;
+        }
+
+        public static async Task<List<BuildingReference>> GetBuildings(string managementCompanyId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.GetAsync($"https://localhost:44303/building/{managementCompanyId}");
+
+            var buildings = JsonConvert.DeserializeObject<IEnumerable<BuildingReference>>
+                (await response.Content.ReadAsStringAsync());
+
+            return buildings.ToList();
+        }
+
+        public static async Task OpenMeetingForBuilding(string buildingId, CreateMeetingBinding binding)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.PostAsJsonAsync($"https://localhost:44303/meetings/buindings/{buildingId}", binding);
+        }
+
+        public static async Task CloseMeetingForBuilding(string meetingId)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+                client.DeleteAsync($"https://localhost:44303/meetings/buindings/{meetingId}");
+        }
     }
 }
+

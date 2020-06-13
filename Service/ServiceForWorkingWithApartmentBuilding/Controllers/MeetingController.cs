@@ -19,7 +19,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
         }
 
         [HttpDelete("/meetings/buindings/{meetingId}")]
-        public async Task<ActionResult> СдщыуMeetingForBuilding(CancellationToken cancellationToken,
+        public async Task<ActionResult> CloseMeetingForBuilding(CancellationToken cancellationToken,
             [FromRoute] Guid meetingId,
             [FromServices] MeetingManager manager)
         {

@@ -739,27 +739,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ilsiy\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\usano\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\ilsiy\\.nuget\\packages\\",
-      "outputPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\obj\\",
+      "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
+      "outputPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ilsiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\usano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -771,8 +768,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
-              "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
+            "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
             }
           }
         }
@@ -809,18 +806,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
