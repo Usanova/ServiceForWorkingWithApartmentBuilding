@@ -34,3 +34,15 @@ C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Ser
 C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
 C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
 C:\Users\usano\Desktop\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\bin\Debug\netcoreapp3.1\Domain.dll
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\bin\Debug\netcoreapp3.1\Domain.pdb
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb

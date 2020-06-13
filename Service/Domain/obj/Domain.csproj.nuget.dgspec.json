@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {}
+    "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+    "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\12\\.nuget\\packages\\",
-        "outputPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
+        "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ilsiy\\.nuget\\packages\\",
+        "outputPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ilsiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

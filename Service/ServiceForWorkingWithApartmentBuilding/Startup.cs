@@ -96,6 +96,15 @@ namespace ServiceForWorkingWithApartmentBuilding
 
             #endregion
 
+            #region Building
+
+            services.AddNpgsqlDbContext<Infrastructure.Buildings.BuildingDbContext>(connectionString);
+
+            services.AddScoped<Domain.Buildings.IBuildingRepository, Infrastructure.Buildings.BuildingRepository>();
+            services.AddScoped<Infrastructure.Buildings.Query.GetListBuilding>();
+
+            #endregion
+
             services.AddSwagger();
 
             //services.AddAuthentication()

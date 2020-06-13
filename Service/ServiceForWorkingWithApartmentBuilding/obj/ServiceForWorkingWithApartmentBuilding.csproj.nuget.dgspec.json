@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {}
+    "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {}
   },
   "projects": {
-    "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+    "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+        "projectUniqueName": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\12\\.nuget\\packages\\",
-        "outputPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
+        "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\ilsiy\\.nuget\\packages\\",
+        "outputPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ilsiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -65,21 +67,23 @@
         }
       }
     },
-    "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
+    "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\12\\.nuget\\packages\\",
-        "outputPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\obj\\",
+        "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ilsiy\\.nuget\\packages\\",
+        "outputPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ilsiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -91,8 +95,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
+              "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
               }
             }
           }
@@ -140,21 +144,23 @@
         }
       }
     },
-    "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {
+    "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+        "projectUniqueName": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
         "projectName": "ServiceForWorkingWithApartmentBuilding",
-        "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
-        "packagesPath": "C:\\Users\\12\\.nuget\\packages\\",
-        "outputPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\obj\\",
+        "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+        "packagesPath": "C:\\Users\\ilsiy\\.nuget\\packages\\",
+        "outputPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\12\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ilsiy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -166,11 +172,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
+              "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
               },
-              "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj"
+              "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "E:\\хакатон\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
