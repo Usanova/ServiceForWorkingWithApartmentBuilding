@@ -44,7 +44,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
             try
             {
-                tenant = await manager.Create(binding.Name,
+                tenant = await manager.Create(binding.Name + binding.Surname,
                     binding.Surname,
                     binding.Password,
                     binding.DateOfBirth,
