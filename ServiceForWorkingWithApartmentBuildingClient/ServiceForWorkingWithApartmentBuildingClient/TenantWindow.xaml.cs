@@ -51,6 +51,12 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             return btn;
         }
 
+        private async void btnStartMeeting(object sender, RoutedEventArgs e)
+        {
+            var chatWindow = new ChatWindow(Profile.Id.ToString(), Profile.HasMeeting, Profile.Name + Profile.Surname, true);
+            chatWindow.ShowDialog();
+        }
+
         int lastItem { get; set; }
 
         private void tbMain_SelectionChanged(object sender, SelectionChangedEventArgs e)

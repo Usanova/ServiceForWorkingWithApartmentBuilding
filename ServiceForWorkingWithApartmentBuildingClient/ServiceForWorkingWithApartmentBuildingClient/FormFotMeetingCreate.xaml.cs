@@ -22,7 +22,10 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         string ManagementCompanyId { get; set; }
         string MeetingId { get; set; }
 
-        public FormFotMeetingCreate(string managementCompanyId, List<BuildingReference> buildings)
+        ManagementCompanyProfileView Profile { get; set; }
+
+        public FormFotMeetingCreate(string managementCompanyId, List<BuildingReference> buildings, 
+            ManagementCompanyProfileView profile)
         {
             InitializeComponent();
 
@@ -34,6 +37,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                     Content = binding.Address,
                     Tag = binding.BuildingId.ToString()
                 });
+
+            Profile = profile;
         }
 
         private async void btnCreateNewMeeting_Click(object sender, RoutedEventArgs e)
@@ -56,9 +61,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
             grMain.Children.Remove(spMain);
 
-            var button = CreateBtnGoToMeeting();
-
-            grMain.Children.Add(button);
+            var chatWindow = new ChatWindow(Profile.Id.ToString(), Profile.HasMeeting, Profile.Name, true);
+            chatWindow.ShowDialog();
         }
 
         private Button CreateBtnGoToMeeting()

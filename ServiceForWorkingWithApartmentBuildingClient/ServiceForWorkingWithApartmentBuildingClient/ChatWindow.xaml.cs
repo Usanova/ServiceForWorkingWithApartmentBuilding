@@ -64,7 +64,9 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         }
 
         delegate Task RetryConnect();
+        delegate Task RetryConnect1(string chatId);
         RetryConnect retryConnect;
+        RetryConnect1 retryConnect1;
         public string userIdProp { get; private set; }
         public string chatIdProp { get; private set; }
         public string userNameProp { get; private set; }
@@ -91,10 +93,15 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 .WithAutomaticReconnect()
                 .Build();
 
+
             retryConnect += Connect;
+            retryConnect1 += JoinGroup;
             // повторяем попытку соединения с сервером
             if (hubConnection.State == HubConnectionState.Disconnected)
+            {
                 retryConnect();
+                retryConnect1(chatId);
+            }
 
             // прослушка респонза от сервера
             hubConnection.On<string, string>("ReceiveMessage", (user, message) =>

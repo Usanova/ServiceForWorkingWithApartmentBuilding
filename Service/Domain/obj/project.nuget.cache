@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xtPmmsU0Ya+NUxl88N11L3oWNq5+/jXN59/sGPXb9ytn2Xp/KgvtpeD1h1L0kN7KIRiwXkJ7nL+gQuUPu8ozLg==",
+  "dgSpecHash": "LpaEV0hhwWvt1DWhVbsb0nedBf8+IVcPB5aq/xFOSsGlwwNnlw09uGAUDmpwU3bbaK+jT+0R5bQ/SyE3HN9Qnw==",
   "success": true,
-  "projectFilePath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

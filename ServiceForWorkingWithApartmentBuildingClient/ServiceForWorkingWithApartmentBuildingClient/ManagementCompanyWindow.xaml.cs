@@ -167,7 +167,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             else
             {
                 var buildings = await Server.GetBuildings(Profile.Id.ToString());
-                var formForMeetingCreate = new FormFotMeetingCreate(Profile.Id.ToString(), buildings);
+                var formForMeetingCreate = new FormFotMeetingCreate(Profile.Id.ToString(), buildings, Profile);
                 spMeeting.Children.Add(formForMeetingCreate);
             }
         }
@@ -220,7 +220,14 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 Margin = new Thickness(30, 0, 0, 0),
                 Style = (Style)this.FindResource("btnGoToMeeting")
             };
+            btn.Click += btnStartMeeting;
             return btn;
+        }
+
+        private async void btnStartMeeting(object sender, RoutedEventArgs e)
+        {
+            var chatWindow = new ChatWindow(Profile.Id.ToString(), Profile.HasMeeting, Profile.Name, true);
+            chatWindow.ShowDialog();
         }
     }
 

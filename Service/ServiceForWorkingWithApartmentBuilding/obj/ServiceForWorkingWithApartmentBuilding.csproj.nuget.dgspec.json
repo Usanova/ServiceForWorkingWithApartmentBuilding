@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {}
+    "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {}
   },
   "projects": {
-    "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+    "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-        "outputPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
+        "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
+        "outputPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\usano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -57,27 +55,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-        "outputPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\obj\\",
+        "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
+        "outputPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\usano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -89,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
+              "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
               }
             }
           }
@@ -132,27 +128,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {
+    "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+        "projectUniqueName": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
         "projectName": "ServiceForWorkingWithApartmentBuilding",
-        "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
-        "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-        "outputPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\obj\\",
+        "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuilding.csproj",
+        "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
+        "outputPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\ServiceForWorkingWithApartmentBuilding\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\usano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -164,11 +158,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
+              "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj"
               },
-              "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj"
+              "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\Service\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -237,7 +231,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -46,7 +46,6 @@ C:\Users\usano\Desktop\МДК\ServiceForWorkingWithApartmentBuilding\Service\Dom
 C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
 C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.dll
 C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
-C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
 C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
 C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
 C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
