@@ -10,17 +10,16 @@
         <StackPanel Orientation="Horizontal">
             <Image Width="50" Height="50" HorizontalAlignment="Left" Margin="20,10,30,10"
                Grid.Row="0" ></Image>
-            <StackPanel Margin="0,5,0,0" Height="120" Width="320">
+            <StackPanel Margin="0,5,0,0" Height="120" Width="300">
                 <TextBlock x:Name="tblName" Foreground="White" Margin="0,20,0,0">TenantName</TextBlock>
                 <TextBlock x:Name="tblSurname" TextWrapping="Wrap"  Foreground="White" Margin="0,10,0,0">TenantSurname</TextBlock>
                 <TextBlock x:Name="tblManagementCompanyName" TextWrapping="Wrap"  Foreground="White" Margin="0,10,0,0">ManagementCompanyName</TextBlock>
             </StackPanel>
-            <StackPanel Margin="20,5,0,0" Height="120" Width="320">
+            <StackPanel Margin="20,5,0,0" Height="120" Width="300">
                 <TextBlock x:Name="tblAddress" Foreground="White" Margin="0,20,0,0">Address</TextBlock>
                 <TextBlock x:Name="tblEntranceNumber" TextWrapping="Wrap"  Foreground="White" Margin="0,10,0,0">EntranceNumber</TextBlock>
                 <TextBlock x:Name="tblFlatNumber" TextWrapping="Wrap"  Foreground="White" Margin="0,10,0,0">FlatNumber</TextBlock>
             </StackPanel>
-            <Button Height="100" Width="100" Margin="30,0,0,0" Style="{StaticResource btnGoToMeeting}"></Button>
         </StackPanel>
         <TabControl TabStripPlacement="Left" Name ="tcMain" SelectionChanged="tbMain_SelectionChanged">
             
