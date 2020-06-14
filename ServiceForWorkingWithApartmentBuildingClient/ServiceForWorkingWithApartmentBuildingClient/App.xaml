@@ -4,6 +4,34 @@
              xmlns:local="clr-namespace:ServiceForWorkingWithApartmentBuildingClient"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="btnGoToMeeting">
+            <Setter Property="Button.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid>
+                            <Border Name="BdEncrypt" CornerRadius="100,100,100,100" Background="Crimson"    BorderBrush="Black" BorderThickness="1,1,1,1" >
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <TextBlock Name="lbl" VerticalAlignment="Center" HorizontalAlignment="Center"  
+                                   Foreground="White" TextAlignment="Center"
+                                   FontSize="10" FontFamily="seoge UI">У вас <LineBreak/> есть собрание</TextBlock>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="BdEncrypt" Property="Background" Value="{x:Null}"/>
+                                <Setter TargetName="lbl" Property="Foreground" Value="#FF0044"/>
+                                <Setter TargetName="BdEncrypt" Property="BorderBrush" Value="Gray"/>
+                                <Setter TargetName="BdEncrypt" Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="Button.IsPressed" Value="true">
+                                <Setter TargetName="BdEncrypt" Property="Background" Value="#DC6679" />
+                                <Setter TargetName="lbl" Property="Foreground" Value="#f73d68" />
+                                <Setter TargetName="BdEncrypt" Property="BorderBrush" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
