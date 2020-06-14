@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceForWorkingWithApartmentBuildingClient.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -17,10 +18,26 @@ namespace ServiceForWorkingWithApartmentBuildingClient
     /// </summary>
     public partial class TenantWindow : Window
     {
+        ProfileView Profile { get; set; }
         public TenantWindow()
         {
             InitializeComponent();
-            CreateBtnGoToMeeting();
+        }
+
+        public async void Show(string tenatName, string tenatSurname, string tenantPassword)
+        {
+            Profile = await Server.GetTenantProfile(tenatName, tenatSurname, tenantPassword);
+            tblName.Text = $"{tblName.Text}: {Profile.Name}";
+            tblSurname.Text = $"{tblSurname.Text}: {Profile.Surname}";
+            tblManagementCompanyName.Text = $"{tblManagementCompanyName.Text}: {Profile.NameManagmentCompany}";
+            tblAddress.Text = $"{tblAddress.Text}: {Profile.Address}";
+            tblEntranceNumber.Text = $"{tblEntranceNumber.Text}: {Profile.EntranceNumber}";
+            tblFlatNumber.Text = $"{tblFlatNumber.Text} {Profile.FlatNumber}";
+            if (Profile.HasMeeting != null)
+                CreateBtnGoToMeeting();
+
+            lastItem = 1;
+            this.Show();
         }
         private Button CreateBtnGoToMeeting()
         {
@@ -32,6 +49,45 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 Style = (Style)this.FindResource("btnGoToMeeting")
             };
             return btn;
+        }
+
+        int lastItem { get; set; }
+
+        private void tbMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int tab = tcMain.SelectedIndex;
+
+            if (tab == lastItem)
+                return;
+
+            switch (tab)
+            {
+                case 0:
+                    LoadPoll();
+                    break;
+                case 1:
+                    LoadAnnouncement();
+                    break;
+            }
+            lastItem = tab;
+        }
+
+        private async void LoadPoll()
+        {
+            stpPolls.Children.Clear();
+
+            var polls = await Server.GetPollsForTeant(Profile.Id.ToString());
+            foreach (var poll in polls)
+                new PollButtonForTenant(stpPolls, poll);
+        }
+
+        private async void LoadAnnouncement()
+        {
+            stpAnnouncements.Children.Clear();
+
+            var announcements = await Server.GetAnnouncementsForTenant(Profile.Id.ToString());
+            foreach (var announcement in announcements)
+                new AnnouncementButton(stpAnnouncements, announcement);
         }
     }
 }

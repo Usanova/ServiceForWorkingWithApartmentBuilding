@@ -177,6 +177,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             }
             else
             {
+                var tenantWindow = new TenantWindow();
+                tenantWindow.Show(tbName.Text, tbSurname.Text, hashPassword);
                 this.Close();
             }
         }

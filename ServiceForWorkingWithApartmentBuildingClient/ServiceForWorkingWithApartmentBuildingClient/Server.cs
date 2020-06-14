@@ -91,14 +91,14 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         }
 
         public static async Task<ProfileView> GetTenantProfile
-            (string name, string password)
+            (string name, string surname, string password)
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/json");
             client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
 
             HttpResponseMessage response = await
-               client.GetAsync($"https://localhost:44303/tenants/profile/{name}/{password}");
+               client.GetAsync($"https://localhost:44303/tenants/profile/{name}/{surname}/{password}");
 
             var profile = JsonConvert.DeserializeObject<ProfileView>
                 (await response.Content.ReadAsStringAsync());

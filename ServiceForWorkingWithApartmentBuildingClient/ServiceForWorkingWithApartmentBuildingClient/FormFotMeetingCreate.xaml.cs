@@ -56,7 +56,21 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
             grMain.Children.Remove(spMain);
 
-            //TODO Большую красную кнопку
+            var button = CreateBtnGoToMeeting();
+
+            grMain.Children.Add(button);
+        }
+
+        private Button CreateBtnGoToMeeting()
+        {
+            Button btn = new Button()
+            {
+                Height = 200,
+                Width = 200,
+                Margin = new Thickness(30, 0, 0, 0),
+                Style = (Style)this.FindResource("btnGoToMeeting")
+            };
+            return btn;
         }
     }
 }

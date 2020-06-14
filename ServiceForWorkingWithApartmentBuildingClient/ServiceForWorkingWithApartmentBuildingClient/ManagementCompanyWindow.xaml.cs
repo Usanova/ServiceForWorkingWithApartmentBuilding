@@ -85,6 +85,14 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             };
 
             await Server.CreatePollByBuildingId(buildingId, createPollBinding);
+
+            lblCreatePollState.Content = "Опрос успешно создан";
+            tbPollQuestionForCreatePoll.Text = "";
+            foreach (var answer in stpAnswerOptions.Children)
+            {
+                var tbAnswer = (TextBox)answer;
+                tbAnswer.Text = "";
+            }
         }
 
         int lastItem { get; set; }
@@ -120,7 +128,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
             var polls = await Server.GetPollsFromManagementCompany(Profile.Id.ToString());
             foreach (var poll in polls)
-                new PollButton(stpPolls, poll);
+                new PollButtonForManagementCompany(stpPolls, poll);
         }
 
         async void LoadBuildingsForCreatePoll()
@@ -153,7 +161,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             Profile = await Server.GetManagementCompanyProfile(Profile.Name);
             if (Profile.HasMeeting != null)
             {
-                //TODO сгенрить большую красную кнопку
+                var button = CreateBtnGoToMeeting();
+                spMeeting.Children.Add(button);
             }
             else
             {
@@ -181,6 +190,9 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
             await Server.CreateAnnouncementByBuildingId(buildingId, createAnnouncementBinding);
             lblCreateAnnouncementState.Content = "Объявление успешно создано";
+
+            tbAnnouncementTitleForCreateAnnouncement.Text = "";
+            tbAnnouncementContentForCreateAnnouncement.Text = "";
         }
 
         private async void btnCreateBuilding_Click(object sender, RoutedEventArgs e)
@@ -197,6 +209,18 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 lblCreateBuildingState.Content = "Адрес успешно на вас зарегестрирован";
             else
                 lblCreateBuildingState.Content = "Данный адрес уже зарегистрирован на другую компанию";
+        }
+
+        private Button CreateBtnGoToMeeting()
+        {
+            Button btn = new Button()
+            {
+                Height = 200,
+                Width = 200,
+                Margin = new Thickness(30, 0, 0, 0),
+                Style = (Style)this.FindResource("btnGoToMeeting")
+            };
+            return btn;
         }
     }
 }

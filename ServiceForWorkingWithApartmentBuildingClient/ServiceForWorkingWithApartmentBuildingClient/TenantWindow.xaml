@@ -22,7 +22,7 @@
             </StackPanel>
             <Button Height="100" Width="100" Margin="30,0,0,0" Style="{StaticResource btnGoToMeeting}"></Button>
         </StackPanel>
-        <TabControl TabStripPlacement="Left" Name ="tcMain" >
+        <TabControl TabStripPlacement="Left" Name ="tcMain" SelectionChanged="tbMain_SelectionChanged">
             
             <TabItem>
                 <TabItem.Header>
@@ -45,10 +45,10 @@
                     <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Объявления</Label>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Grid Height="550">
+                    <Grid Height="500">
                         <ScrollViewer CanContentScroll="False">
                             <StackPanel Width="720" Margin="0,20,0,0" >
-                                <Label Width="130" Margin="0,10,0,10" FontSize="14" HorizontalContentAlignment="Center">Опросы</Label>
+                                <Label Width="130" Margin="0,10,0,10" FontSize="14" HorizontalContentAlignment="Center">Объявления</Label>
                                 <StackPanel x:Name="stpAnnouncements" Width="720"  Margin="0,10,0,0">
                                 </StackPanel>
                             </StackPanel>

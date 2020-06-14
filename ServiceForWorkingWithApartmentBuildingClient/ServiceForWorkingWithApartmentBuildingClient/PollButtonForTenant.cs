@@ -2,20 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 
 namespace ServiceForWorkingWithApartmentBuildingClient
 {
-    public class PollButton
+    class PollButtonForTenant
     {
-        public PollButton(StackPanel stpPolls, PollReference poll)
+        public PollButtonForTenant(StackPanel stpAnnouncements, PollReference poll)
         {
             this.bt = bt;
             this.st = st;
-            this.stPolls = stpPolls;
+            this.stpAnnouncements = stpAnnouncements;
             Poll = poll;
 
             st = new StackPanel()
@@ -31,7 +31,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 Text = Poll.Question,
                 Margin = new Thickness(10, 10, 0, 10),
                 TextWrapping = TextWrapping.Wrap,
-                Width = 625,
+                Width = 665,
             };
             bt = new Button()
             {
@@ -43,22 +43,10 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             };
             bt.Click += ButtonPollClick;
 
-            btClose = new Button()
-            {
-
-                Width = 23,
-                Height = 23,
-                Content = "x",
-                Background = (Brush)new BrushConverter().ConvertFrom("#7BCCBE"),
-                Margin = new Thickness(15,0,0,0)
-            };
-            btClose.Click += Close;
-
             stpGetPoll.Children.Add(tb);
             stpGetPoll.Children.Add(bt);
-            stpGetPoll.Children.Add(btClose);
             st.Children.Add(stpGetPoll);
-            stpPolls.Children.Add(st);
+            stpAnnouncements.Children.Add(st);
         }
 
         Button bt { get; set; }
@@ -69,7 +57,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
         PollReference Poll { get; set; }
 
-        StackPanel stPolls { get; set; }
+        StackPanel stpAnnouncements { get; set; }
 
         bool Flag = true;
 
@@ -77,22 +65,25 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         {
             if (Flag)
             {
-                var answers = await Server.GetAnswerOption(Poll.PollId.ToString());
-                st.Children.Add(CreateGridForAnswers(answers));
+                await GetPollAnswers();
             }
             else
             {
-                int lastIndexInSt = st.Children.Count;
-                st.Children.RemoveAt(lastIndexInSt - 1);
+                RemovePollAnswers();
             }
             Flag = !Flag;
         }
 
-        private async void Close(object sender, RoutedEventArgs e)
+        private async Task GetPollAnswers()
         {
-            await Server.ClosePoll(Poll.PollId.ToString());
+            var answers = await Server.GetAnswerOption(Poll.PollId.ToString());
+            st.Children.Add(CreateGridForAnswers(answers));
+        }
 
-            stPolls.Children.Remove(st);
+        private void RemovePollAnswers()
+        {
+            int lastIndexInSt = st.Children.Count;
+            st.Children.RemoveAt(lastIndexInSt - 1);
         }
 
         private Grid CreateGridForAnswers(List<AnswerOptionReference> answerList)
@@ -108,8 +99,9 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             {
                 grPollAnswer.RowDefinitions.Add(new RowDefinition());
             }
-            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(600) });
-            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(100) });
+            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(500) });
+            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(150) });
+            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(50) });
 
 
             int countVoters = 0;
@@ -124,13 +116,16 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
                 string countVotersForThisAnswer;
                 if (countVoters == 0)
-                    countVotersForThisAnswer = $"{answerList[i].VotersNumber}(0%)";
+                    countVotersForThisAnswer = $"{answerList[i].VotersNumber} (0%)";
                 else
-                    countVotersForThisAnswer = $"{answerList[i].VotersNumber}" +
-                        $"({(int)((answerList[i].VotersNumber / ((double)countVoters))*100)}%)";
+                    countVotersForThisAnswer = $"{answerList[i].VotersNumber} " +
+                        $"({(int)((answerList[i].VotersNumber / ((double)countVoters)) * 100)}%)";
 
                 grPollAnswer.Children.Add(CreateTextBlockForAnswers(countVotersForThisAnswer.ToString(),
                     grPollAnswer, i, 1));
+
+                grPollAnswer.Children.Add(CreateButtonForVoke(answerList[i].AnswerOptionId.ToString(),
+                    i, 2));
             }
             return grPollAnswer;
         }
@@ -156,6 +151,36 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             Grid.SetRow(br, rowNum);
 
             return br;
+        }
+
+        private Button CreateButtonForVoke(string answerId, int rowNum, int colNum)
+        {
+            var bt = new Button()
+            {
+                Width = 23,
+                Height = 23,
+                Content = "v",
+                Background = (Brush)new BrushConverter().ConvertFrom("#7BCCBE"),
+                Tag = answerId
+            };
+
+            bt.Click += ToVoke;
+
+            Grid.SetColumn(bt, colNum);
+            Grid.SetRow(bt, rowNum);
+
+            return bt;
+        }
+
+        private async void ToVoke(object sender, RoutedEventArgs e)
+        {
+            var answerId = (string)(((Button)sender).Tag);
+
+            await Server.ToVoke(Poll.PollId.ToString(), answerId);
+
+            RemovePollAnswers();
+
+            await GetPollAnswers();
         }
     }
 }

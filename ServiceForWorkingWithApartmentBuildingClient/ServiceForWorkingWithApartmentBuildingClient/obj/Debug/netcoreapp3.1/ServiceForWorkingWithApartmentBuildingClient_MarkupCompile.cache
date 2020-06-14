@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\different\ASP\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
+C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
 ServiceForWorkingWithApartmentBuildingClient
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\different\ASP\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
+C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
 6-1225366042
 
-30188945175
-199-1531603158
+32-1797213593
+1991942032908
 FormFotMeetingCreate.xaml;MainWindow.xaml;ManagementCompanyAuthorizationWindow.xaml;ManagementCompanyWindow.xaml;RegistrationTenantWindow.xaml;TenantWindow.xaml;
 
 False
