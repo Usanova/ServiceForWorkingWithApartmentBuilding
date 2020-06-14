@@ -135,6 +135,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         {
             var buildings = await Server.GetBuildings(Profile.Id.ToString());
 
+            cmbBuildingAddressesForCreaatePoll.Items.Clear();
             foreach (var building in buildings)
                 cmbBuildingAddressesForCreaatePoll.Items.Add(new ComboBoxItem()
                 {
@@ -147,6 +148,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         {
             var buildings = await Server.GetBuildings(Profile.Id.ToString());
 
+            cmbBuildingAddressesForCreateAnnouncement.Items.Clear();
             foreach (var building in buildings)
                 cmbBuildingAddressesForCreateAnnouncement.Items.Add(new ComboBoxItem()
                 {
@@ -159,6 +161,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         private async void LoadMeeting()
         {
             Profile = await Server.GetManagementCompanyProfile(Profile.Name);
+            spMeeting.Children.Clear();
             if (Profile.HasMeeting != null)
             {
                 var button = CreateBtnGoToMeeting();

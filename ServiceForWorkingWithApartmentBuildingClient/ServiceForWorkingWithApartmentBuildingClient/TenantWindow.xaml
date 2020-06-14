@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ManagementCompanyWindow" Height="650" Width="900" Background="#2b8f8f">
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Name="spMain" Orientation="Horizontal">
             <Image Width="50" Height="50" HorizontalAlignment="Left" Margin="20,10,30,10"
                Grid.Row="0" ></Image>
             <StackPanel Margin="0,5,0,0" Height="120" Width="300">

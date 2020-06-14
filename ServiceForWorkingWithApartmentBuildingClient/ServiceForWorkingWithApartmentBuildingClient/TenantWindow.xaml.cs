@@ -34,7 +34,10 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             tblEntranceNumber.Text = $"{tblEntranceNumber.Text}: {Profile.EntranceNumber}";
             tblFlatNumber.Text = $"{tblFlatNumber.Text} {Profile.FlatNumber}";
             if (Profile.HasMeeting != null)
-                CreateBtnGoToMeeting();
+            {
+                var button = CreateBtnGoToMeeting();
+                spMain.Children.Add(button);
+            }
 
             lastItem = 1;
             this.Show();
