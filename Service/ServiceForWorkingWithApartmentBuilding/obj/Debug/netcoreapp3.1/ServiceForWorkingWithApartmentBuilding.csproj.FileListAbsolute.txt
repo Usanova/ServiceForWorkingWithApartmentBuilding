@@ -525,3 +525,6 @@ C:\МДК\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithAp
 E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithApartmentBuilding\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithApartmentBuilding\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 E:\хакатон\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithApartmentBuilding\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithApartmentBuilding\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithApartmentBuilding\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\different\ASP\ServiceForWorkingWithApartmentBuilding\Service\ServiceForWorkingWithApartmentBuilding\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
