@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ServiceForWorkingWithApartmentBuildingClient.FormFotMeetingCreate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServiceForWorkingWithApartmentBuildingClient"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <Grid x:Name="grMain">
+        <StackPanel Name="spMain" Height="550">
+            <StackPanel Width="720" Height="510" Margin="0,20,0,0" Background="#7BCCBE">
+                <Label Width="130" Margin="0,10,0,0" HorizontalContentAlignment="Center">Создать собрание</Label>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                    <Label  Margin="10,0,0,0" Width="100" >Для дома:</Label>
+                    <ComboBox x:Name="cmbBuildingAddressesForCreateMeeting" Width="580" Height="23"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                    <Label  Margin="10,0,0,0" Width="100" >Тема собрания:</Label>
+                    <TextBox x:Name="tbMeetingTitleForCreateMeeting" Width="580" MinHeight="50" TextWrapping="Wrap" MaxLength="1024"></TextBox>
+                </StackPanel>
+                <Button x:Name="btnCreateNewMeeting" Width="100" Margin="0,20,0,0" Click="btnCreateNewMeeting_Click">Создать</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

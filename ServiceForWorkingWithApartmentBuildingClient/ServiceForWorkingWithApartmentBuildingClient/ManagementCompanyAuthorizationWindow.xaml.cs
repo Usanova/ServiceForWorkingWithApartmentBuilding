@@ -73,6 +73,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             }
             else
             {
+                var managementCompanyWindow = new ManagementCompanyWindow();
+                managementCompanyWindow.Show(tbName.Text);
                 this.Close();
             }
         }
@@ -136,6 +138,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             }
             else
             {
+                var managementCompanyWindow = new ManagementCompanyWindow();
+                managementCompanyWindow.Show(tbRegistrationName.Text);
                 this.Close();
             }
         }

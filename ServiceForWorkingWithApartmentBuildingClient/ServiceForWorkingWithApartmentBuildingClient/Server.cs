@@ -35,7 +35,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             HttpResponseMessage response = await
                 client.PostAsJsonAsync("https://localhost:44303/Login", binding);
 
-            var token = JsonConvert.DeserializeObject<Token>(await response.Content.ReadAsStringAsync());
+            //var token = JsonConvert.DeserializeObject<Token>(await response.Content.ReadAsStringAsync());
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 return true;
@@ -67,7 +67,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             HttpResponseMessage response = await
                 client.PostAsJsonAsync("https://localhost:44303/LoginManagementCompany", binding);
 
-            var token = JsonConvert.DeserializeObject<Token>(await response.Content.ReadAsStringAsync());
+            //var token = JsonConvert.DeserializeObject<Token>(await response.Content.ReadAsStringAsync());
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 return true;
@@ -88,6 +88,38 @@ namespace ServiceForWorkingWithApartmentBuildingClient
                 return true;
             else
                 return false;
+        }
+
+        public static async Task<ProfileView> GetTenantProfile
+            (string name, string password)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+               client.GetAsync($"https://localhost:44303/tenants/profile/{name}/{password}");
+
+            var profile = JsonConvert.DeserializeObject<ProfileView>
+                (await response.Content.ReadAsStringAsync());
+
+            return profile;
+        }
+
+        public static async Task<ManagementCompanyProfileView> GetManagementCompanyProfile
+            (string managementCompanyName)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            client.DefaultRequestHeaders.Add("User-Agent", "ServiceForWorking");
+
+            HttpResponseMessage response = await
+               client.GetAsync($"https://localhost:44303/managementCompany/profile/{managementCompanyName}");
+
+            var profile = JsonConvert.DeserializeObject<ManagementCompanyProfileView>
+                (await response.Content.ReadAsStringAsync());
+
+            return profile;
         }
 
         public static async Task CreateAnnouncementByBuildingId(string buildingId, CreateAnnouncementBinding binding)
@@ -216,7 +248,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             return buildings.ToList();
         }
 
-        public static async Task OpenMeetingForBuilding(string buildingId, CreateMeetingBinding binding)
+        public static async Task<string> OpenMeetingForBuilding(string buildingId, CreateMeetingBinding binding)
         {
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Accept", "application/json");
@@ -224,6 +256,9 @@ namespace ServiceForWorkingWithApartmentBuildingClient
 
             HttpResponseMessage response = await
                 client.PostAsJsonAsync($"https://localhost:44303/meetings/buindings/{buildingId}", binding);
+
+            return JsonConvert.DeserializeObject<string>
+                (await response.Content.ReadAsStringAsync());
         }
 
         public static async Task CloseMeetingForBuilding(string meetingId)

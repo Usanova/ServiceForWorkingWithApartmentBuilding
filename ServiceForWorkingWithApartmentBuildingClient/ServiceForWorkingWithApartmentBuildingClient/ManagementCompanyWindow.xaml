@@ -15,13 +15,13 @@
                 <TextBlock x:Name="lblInfo" TextWrapping="Wrap"  Foreground="White">CompanyInformation</TextBlock>
             </StackPanel>
         </StackPanel>
-        <TabControl TabStripPlacement="Left">
+        <TabControl TabStripPlacement="Left" Name ="tcMain" SelectionChanged="tbMain_SelectionChanged">
             <TabItem>
                 <TabItem.Header>
                     <Label Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center">Собрание</Label>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <StackPanel Height="550">
+                    <StackPanel Height="550" Name="spMeeting">
 
                     </StackPanel>
                 </TabItem.Content>
@@ -34,16 +34,8 @@
                     <Grid Height="550">
                         <ScrollViewer CanContentScroll="False">
                             <StackPanel Width="720" Margin="0,20,0,0" >
-                                <Label Width="130" Margin="0,10,0,10" HorizontalContentAlignment="Center">Опросы</Label>
+                                <Label Width="130" Margin="0,10,0,10" FontSize="14" HorizontalContentAlignment="Center">Опросы</Label>
                                 <StackPanel x:Name="stpPolls" Width="720"  Margin="0,10,0,0">
-                                    <StackPanel x:Name="stpPool0"  Background="#7BCCBE">
-                                        <StackPanel x:Name="stpGetPoll0" Orientation="Horizontal" Margin="0,10,0,0">
-                                            <TextBlock x:Name="tblNameOfPool0"  TextWrapping="Wrap" Margin="10,0,10,0" Width="660">fsdf</TextBlock>
-                                            <Button x:Name="btnGetPoll0" Width="23" Height="23" Background="#7BCCBE">v</Button>
-                                        </StackPanel>
-
-                                        <Grid x:Name="grAnswerOptionsOfPool0" Width="700" Height="200" Background="White" Margin="0,10,0,10"></Grid>
-                                    </StackPanel>
                                 </StackPanel>
                             </StackPanel>
                         </ScrollViewer>
@@ -103,7 +95,7 @@
                             <Label Margin="10,15,0,5" Width="85" HorizontalAlignment="Left" >Содержание:</Label>
                             <TextBox x:Name="tbAnnouncementContentForCreateAnnouncement" Width="690" Height="260" 
                                      TextWrapping="Wrap" MaxLength="1024" VerticalScrollBarVisibility="Visible" AcceptsReturn="True"></TextBox>
-                            <Button x:Name="btnCreateNewAnnouncement" Width="100" Margin="0,20,0,0">Создать</Button>
+                            <Button x:Name="btnCreateNewAnnouncement" Width="100" Margin="0,20,0,0" Click="btnCreateNewAnnouncement_Click">Создать</Button>
                             <Label x:Name="lblCreateAnnouncementState" HorizontalAlignment="Center" Height="25" Foreground="White" FontSize="10">RequestState</Label>
                         </StackPanel>
                     </StackPanel>
@@ -120,7 +112,7 @@
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center" >
                                 <Label   Width="60" >Адрес:</Label>
                                 <TextBox x:Name="tbBuildingAddressForCreateBuildin" Width="500" Height="23"></TextBox>
-                                <Button x:Name="btnCreateBuilding" Width="100" Margin="15,0,0,0">Добавить</Button>
+                                <Button x:Name="btnCreateBuilding" Width="100" Margin="15,0,0,0" Click="btnCreateBuilding_Click">Добавить</Button>
                             </StackPanel>
                             <Label x:Name="lblCreateBuildingState" Margin="90,0,0,0" Height="25" Foreground="White" FontSize="10">RequestState</Label>
                         </StackPanel>

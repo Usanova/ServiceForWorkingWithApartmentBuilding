@@ -161,7 +161,7 @@ namespace ServiceForWorkingWithApartmentBuildingClient
             {
                 Name = tbName.Text,
                 Surname = tbSurname.Text,
-                DateOfBirth = tbBirthDate.DisplayDate,
+                DateOfBirth = tbBirthDate.SelectedDate.Value,
                 Address = cmi.Content.ToString(),
                 EntranceNumber = int.Parse(tbEntranceNumber.Text),
                 FlatNumber = int.Parse(tbFlatNumber.Text),

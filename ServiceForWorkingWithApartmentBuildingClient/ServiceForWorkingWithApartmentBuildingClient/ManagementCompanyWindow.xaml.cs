@@ -18,9 +18,19 @@ namespace ServiceForWorkingWithApartmentBuildingClient
     /// </summary>
     public partial class ManagementCompanyWindow : Window
     {
+        ManagementCompanyProfileView Profile { get; set; }
         public ManagementCompanyWindow()
         {
             InitializeComponent();
+        }
+
+        public async void Show(string managementCompanyName)
+        {
+            Profile = await Server.GetManagementCompanyProfile(managementCompanyName);
+            lblName.Text = $" {Profile.Name}";
+            lblInfo.Text = $" {Profile.Info}";
+            LoadMeeting();
+            this.Show();
         }
 
         // For CreatingPoll
@@ -51,105 +61,142 @@ namespace ServiceForWorkingWithApartmentBuildingClient
         // end CreatingPoll
 
         //ForPolls
-        private void InitializePoll(string question, Guid pollId)
+        private async void btnCreatePoll_Click(object sender, RoutedEventArgs e)
         {
-            int curNumber = stpPolls.Children.Count;
-            StackPanel stpPoll = new StackPanel()
-            {
-                Background = (Brush)new BrushConverter().ConvertFrom("#7BCCBE"),
-                Name = "stpPoll" + curNumber
-            };
-            RegisterName("stpPoll" + curNumber, stpPoll);
-            StackPanel stpGetPoll = new StackPanel()
-            {
-                Name = "stpGetPoll" + curNumber,
-                Orientation = Orientation.Horizontal
-            };
-            RegisterName("stpGetPoll" + curNumber, stpGetPoll);
+            var cmi = (ComboBoxItem)cmbBuildingAddressesForCreaatePoll.SelectedItem;
+            if (cmi == null)
+                MessageBox.Show("Вы не выбрали дом");
 
-            Button btnGetPoll = new Button()
+            string buildingId = (string)cmi.Tag;
+            string question = tbPollQuestionForCreatePoll.Text;
+            List<string> answers = new List<string>();
+
+            foreach(var answer in stpAnswerOptions.Children)
             {
-                Name = "btnGetPoll" + curNumber,
-                Width = 23,
-                Height = 23,
-                Content = "v",
-                Background = (Brush)new BrushConverter().ConvertFrom("#7BCCBE"),
-            };
-            btnGetPoll.Tag = pollId;
-            btnGetPoll.Click += BtnGetPoll_Click;
-            RegisterName("btnGetPoll" + curNumber, btnGetPoll);
-
-            TextBlock tbName = CreateTextBlock("tblNameOfPool" + curNumber, question);
-            stpPoll.Children.Add(tbName);
-
-
-        }
-
-        private void BtnGetPoll_Click(object sender, RoutedEventArgs e)
-        {
-            Guid pollId = (Guid)this.Tag;
-            StackPanel stpGetPoll = (StackPanel)this.Parent;
-            StackPanel stpPoll = (StackPanel)stpGetPoll.Parent;
-            //get answerList from server
-
-            Grid gr = CreateGridForAnswers(curNumber, new List<AnswerOptionReference>());
-            stpPoll.Children.Add(gr);
-            stpPolls.Children.Add(stpPoll);
-        }
-
-        private TextBlock CreateTextBlock(string name, string text)
-        {
-            TextBlock tb = new TextBlock
-            {
-                Name = name,
-                Text = text,
-                Margin = new Thickness(10, 10, 0, 0),
-                TextWrapping = TextWrapping.Wrap
-            };
-            RegisterName(name, tb);
-            return tb;
-        }
-        private TextBlock CreateTextBlockForAnswers(string name, string text, Grid grForAnswers, int rowNum, int colNum)
-        {
-            TextBlock tbl = new TextBlock
-            {
-                Name = name,
-                Text = text,
-                VerticalAlignment = VerticalAlignment.Center,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                TextAlignment = TextAlignment.Center
-            };
-            Grid.SetColumn(tbl, colNum);
-            Grid.SetRow(tbl, rowNum);
-            RegisterName(name, tbl);
-            return tbl;
-        }
-        private Grid CreateGridForAnswers(int numOfPoll, List<AnswerOptionReference> answerList)
-        {
-            Grid grPollAnswer = new Grid()
-            {
-                Name = "grAnswerOptionsOfPool" + numOfPoll,
-                Width = 700,
-                Background = Brushes.White,
-                Margin = new Thickness(0, 10, 0, 10),
-            };
-            for (int i = 0; i < answerList.Count; i++)
-            {
-                grPollAnswer.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(23) });
+                var tbAnswer = (TextBox)answer;
+                answers.Add(tbAnswer.Text);
             }
-            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(380) });
-            grPollAnswer.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(80) });
 
-            for (int i = 0; i < answerList.Count; i++)
+            var createPollBinding = new CreatePollBinding()
             {
-                grPollAnswer.Children.Add(CreateTextBlockForAnswers("answerName" + numOfPoll + i.ToString(), answerList[i].Answer, grPollAnswer, i, 0));
-                grPollAnswer.Children.Add(CreateTextBlockForAnswers("votersNumber" + numOfPoll + i.ToString(), answerList[i].Answer, grPollAnswer, i, 1));
-            }
-            return grPollAnswer;
+                Question = question,
+                Answers = answers,
+                OwnerId = Profile.Id.ToString(),
+            };
+
+            await Server.CreatePollByBuildingId(buildingId, createPollBinding);
         }
-        // end ForPolls
-        private void btnCreatePoll_Click(object sender, RoutedEventArgs e)
+
+        int lastItem { get; set; }
+
+        private void tbMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int tab = tcMain.SelectedIndex;
+
+            if (tab == lastItem)
+                return;
+
+            switch(tab)
+            {
+                case 0:
+                    LoadMeeting();
+                    break;
+                case 1:
+                    LoadPoll();
+                    break;
+                case 2:
+                    LoadBuildingsForCreatePoll();
+                    break;
+                case 3:
+                    LoadBuildingsForCreateAnnouncement();
+                    break;
+            }
+            lastItem = tab;
+        }
+
+        private async void LoadPoll()
+        {
+            stpPolls.Children.Clear();
+
+            var polls = await Server.GetPollsFromManagementCompany(Profile.Id.ToString());
+            foreach (var poll in polls)
+                new PollButton(stpPolls, poll);
+        }
+
+        async void LoadBuildingsForCreatePoll()
+        {
+            var buildings = await Server.GetBuildings(Profile.Id.ToString());
+
+            foreach (var building in buildings)
+                cmbBuildingAddressesForCreaatePoll.Items.Add(new ComboBoxItem()
+                {
+                    Content = building.Address,
+                    Tag = building.BuildingId.ToString()
+                });
+        }
+
+        async void LoadBuildingsForCreateAnnouncement()
+        {
+            var buildings = await Server.GetBuildings(Profile.Id.ToString());
+
+            foreach (var building in buildings)
+                cmbBuildingAddressesForCreateAnnouncement.Items.Add(new ComboBoxItem()
+                {
+                    Content = building.Address,
+                    Tag = building.BuildingId.ToString()
+                });
+        }
+
+
+        private async void LoadMeeting()
+        {
+            Profile = await Server.GetManagementCompanyProfile(Profile.Name);
+            if (Profile.HasMeeting != null)
+            {
+                //TODO сгенрить большую красную кнопку
+            }
+            else
+            {
+                var buildings = await Server.GetBuildings(Profile.Id.ToString());
+                var formForMeetingCreate = new FormFotMeetingCreate(Profile.Id.ToString(), buildings);
+                spMeeting.Children.Add(formForMeetingCreate);
+            }
+        }
+
+        private async void btnCreateNewAnnouncement_Click(object sender, RoutedEventArgs e)
+        {
+            var cmi = (ComboBoxItem)cmbBuildingAddressesForCreateAnnouncement.SelectedItem;
+            if (cmi == null)
+                MessageBox.Show("Вы не выбрали дом");
+
+            string buildingId = (string)cmi.Tag;
+            string title = tbAnnouncementTitleForCreateAnnouncement.Text;
+            string content = tbAnnouncementContentForCreateAnnouncement.Text;
+
+            var createAnnouncementBinding = new CreateAnnouncementBinding()
+            {
+                Title = title,
+                Content = content
+            };
+
+            await Server.CreateAnnouncementByBuildingId(buildingId, createAnnouncementBinding);
+            lblCreateAnnouncementState.Content = "Объявление успешно создано";
+        }
+
+        private async void btnCreateBuilding_Click(object sender, RoutedEventArgs e)
+        {
+            string address = tbBuildingAddressForCreateBuildin.Text;
+            var createBuildingBinding = new CreateBuildingBinding()
+            {
+                Address = address
+            };
+
+            bool result = await Server.CreateBuildingByManagementCompanyId(Profile.Id.ToString(), createBuildingBinding);
+
+            if (result == true)
+                lblCreateBuildingState.Content = "Адрес успешно на вас зарегестрирован";
+            else
+                lblCreateBuildingState.Content = "Данный адрес уже зарегистрирован на другую компанию";
         }
     }
 }
