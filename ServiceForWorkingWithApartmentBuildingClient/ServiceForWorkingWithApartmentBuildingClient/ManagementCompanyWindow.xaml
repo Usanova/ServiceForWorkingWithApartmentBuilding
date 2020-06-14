@@ -22,7 +22,7 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel Height="550" Name="spMeeting">
-
+                        
                     </StackPanel>
                 </TabItem.Content>
             </TabItem>

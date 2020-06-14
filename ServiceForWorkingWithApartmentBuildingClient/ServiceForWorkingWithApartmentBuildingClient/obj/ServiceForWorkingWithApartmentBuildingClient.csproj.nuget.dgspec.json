@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj": {}
+    "D:\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj": {}
   },
   "projects": {
-    "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj": {
+    "D:\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj",
+        "projectUniqueName": "D:\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj",
         "projectName": "ServiceForWorkingWithApartmentBuildingClient",
-        "projectPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj",
-        "packagesPath": "C:\\Users\\usano\\.nuget\\packages\\",
-        "outputPath": "C:\\МДК\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\obj\\",
+        "projectPath": "D:\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient.csproj",
+        "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
+        "outputPath": "D:\\ServiceForWorkingWithApartmentBuilding\\ServiceForWorkingWithApartmentBuildingClient\\ServiceForWorkingWithApartmentBuildingClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\usano\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -53,6 +55,10 @@
               "target": "Package",
               "version": "[3.1.5, )"
             },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -76,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

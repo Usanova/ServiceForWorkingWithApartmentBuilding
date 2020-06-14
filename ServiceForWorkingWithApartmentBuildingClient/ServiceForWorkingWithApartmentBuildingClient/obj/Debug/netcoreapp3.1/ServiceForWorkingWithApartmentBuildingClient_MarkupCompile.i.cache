@@ -1,20 +1,20 @@
 ﻿ServiceForWorkingWithApartmentBuildingClient
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
+D:\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\obj\Debug\netcoreapp3.1\
 ServiceForWorkingWithApartmentBuildingClient
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\МДК\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
-6-1225366042
+D:\ServiceForWorkingWithApartmentBuilding\ServiceForWorkingWithApartmentBuildingClient\ServiceForWorkingWithApartmentBuildingClient\App.xaml
+9-1501579436
 
-33333375518
-1991942032908
-FormFotMeetingCreate.xaml;MainWindow.xaml;ManagementCompanyAuthorizationWindow.xaml;ManagementCompanyWindow.xaml;RegistrationTenantWindow.xaml;TenantWindow.xaml;
+37-614320828
+214422591958
+ChatItemContainer.xaml;ChatWindow.xaml;FormFotMeetingCreate.xaml;MainWindow.xaml;ManagementCompanyAuthorizationWindow.xaml;ManagementCompanyWindow.xaml;OwnerChatItemContainer.xaml;RegistrationTenantWindow.xaml;TenantWindow.xaml;
 
 True
 

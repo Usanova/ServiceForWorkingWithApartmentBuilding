@@ -125,7 +125,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ServiceForWorkingWithApartmentBuildingClient;component/tenantwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ServiceForWorkingWithApartmentBuildingClient;V1.0.0.0;component/tenantwindow.xam" +
+                    "l", System.UriKind.Relative);
             
             #line 1 "..\..\..\TenantWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

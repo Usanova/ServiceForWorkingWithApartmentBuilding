@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ChatItemContainer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChatWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="FormFotMeetingCreate.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -14,6 +20,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ManagementCompanyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OwnerChatItemContainer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="RegistrationTenantWindow.xaml.cs">
@@ -24,6 +33,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ChatItemContainer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChatWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="FormFotMeetingCreate.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -34,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ManagementCompanyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OwnerChatItemContainer.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegistrationTenantWindow.xaml">

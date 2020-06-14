@@ -93,8 +93,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ServiceForWorkingWithApartmentBuildingClient;component/formfotmeetingcreate.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ServiceForWorkingWithApartmentBuildingClient;V1.0.0.0;component/formfotmeetingcr" +
+                    "eate.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\FormFotMeetingCreate.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

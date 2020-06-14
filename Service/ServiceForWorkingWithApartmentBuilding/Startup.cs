@@ -19,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using ServiceForWorkingWithApartmentBuilding.Extensions;
+using ServiceForWorkingWithApartmentBuilding.Hubs;
 
 namespace ServiceForWorkingWithApartmentBuilding
 {
@@ -34,6 +35,8 @@ namespace ServiceForWorkingWithApartmentBuilding
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
+
             var connectionString = Configuration.GetConnectionString("ServiceForWorkingWithApartmentBuilding");
 
             #region Tenat
@@ -163,6 +166,13 @@ namespace ServiceForWorkingWithApartmentBuilding
 
             app.UseRouting();
 
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<ContosoChatHub>("/ChatHub");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.UseAuthentication();    // аутентификация
             app.UseAuthorization();
@@ -171,13 +181,6 @@ namespace ServiceForWorkingWithApartmentBuilding
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
             app.UseRewriter(new RewriteOptions().AddRedirect(@"^$", "swagger", (int)HttpStatusCode.Redirect));

@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ng7WdzJorZ/QT6Wc3W4kI4pytDGgNNGga6LRztXcx5eQgP3YRXKRpohZKQpbI+tZl8T7aY5kMfvY/sFHIRg6ng==",
+  "dgSpecHash": "xtPmmsU0Ya+NUxl88N11L3oWNq5+/jXN59/sGPXb9ytn2Xp/KgvtpeD1h1L0kN7KIRiwXkJ7nL+gQuUPu8ozLg==",
   "success": true,
-  "projectFilePath": "C:\\different\\ASP\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\12\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\ServiceForWorkingWithApartmentBuilding\\Service\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

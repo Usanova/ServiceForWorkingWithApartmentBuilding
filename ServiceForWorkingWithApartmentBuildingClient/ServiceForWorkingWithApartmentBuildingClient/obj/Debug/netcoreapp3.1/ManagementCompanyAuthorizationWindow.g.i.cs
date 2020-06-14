@@ -157,8 +157,8 @@ namespace ServiceForWorkingWithApartmentBuildingClient {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ServiceForWorkingWithApartmentBuildingClient;component/managementcompanyauthoriz" +
-                    "ationwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ServiceForWorkingWithApartmentBuildingClient;V1.0.0.0;component/managementcompan" +
+                    "yauthorizationwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ManagementCompanyAuthorizationWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

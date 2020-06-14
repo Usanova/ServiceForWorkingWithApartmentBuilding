@@ -12,7 +12,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Hubs
 
         public async Task SendMessage(string user, string groupName, string message)
         {
-            await Clients.Group(groupName).SendAsync(message);
+            await Clients.Group(groupName).SendAsync("ReceiveMessage", user, message);
         }
 
         public Task LeaveGroup(string groupName)
