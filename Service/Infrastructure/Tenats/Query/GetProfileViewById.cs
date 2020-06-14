@@ -28,6 +28,7 @@ namespace Infrastructure.Tenats.Query
             {
                 Id = tenant.TenantId,
                 Name = tenant.Name,
+                Surname = tenant.Surname,
                 Address = building.Address,
                 EntranceNumber = tenant.EntranceNumber,
                 FlatNumber = tenant.FlatNumber,

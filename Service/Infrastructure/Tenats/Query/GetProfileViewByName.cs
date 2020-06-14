@@ -20,9 +20,9 @@ namespace Infrastructure.Tenats.Query
             this.buildingService = buildingService;
         }
 
-        public async Task<ProfileView> Handler(string name, string password, CancellationToken cancellationToken)
+        public async Task<ProfileView> Handler(string name, string surname, string password, CancellationToken cancellationToken)
         {
-            var tenant = await repository.Get(name, password, cancellationToken);
+            var tenant = await repository.Get(name, surname, password, cancellationToken);
 
             var building = await buildingService.Get(tenant.BuildingId, cancellationToken);
 
@@ -31,6 +31,7 @@ namespace Infrastructure.Tenats.Query
             {
                 Id = tenant.TenantId,
                 Name = tenant.Name,
+                Surname = tenant.Surname,
                 Address = building.Address,
                 EntranceNumber = tenant.EntranceNumber,
                 FlatNumber = tenant.FlatNumber,

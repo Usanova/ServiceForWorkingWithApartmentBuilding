@@ -44,7 +44,7 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
 
             try
             {
-                tenant = await manager.Create(binding.Name + binding.Surname,
+                tenant = await manager.Create(binding.Name,
                     binding.Surname,
                     binding.Password,
                     binding.DateOfBirth,
@@ -106,13 +106,14 @@ namespace ServiceForWorkingWithApartmentBuilding.Controllers
             return Json(response);
         }
 
-        [HttpGet("/tenants/profile/{name}/{password}")]
+        [HttpGet("/tenants/profile/{name}/{surname}/{password}")]
         public async Task<IActionResult> GetTenantProfile(CancellationToken cancellationToken,
         [FromRoute] string name,
+        [FromRoute] string surname,
         [FromRoute] string password,
         [FromServices] GetProfileViewByName getProfileViewByName)
         {
-            return Ok(await getProfileViewByName.Handler(name, password, cancellationToken));
+            return Ok(await getProfileViewByName.Handler(name, surname, password, cancellationToken));
         }
 
         [HttpGet("/tenants/profile/{tenantId}")]

@@ -10,6 +10,8 @@ namespace Infrastructure.Tenats.Query
         
         public string Name { get; set; }
 
+        public string Surname { get; set; }
+
         public string Address { get; set; }
 
         public int EntranceNumber { get; set; }
